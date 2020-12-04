@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var email = ""
+    @State private var password = ""
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack{
+            Spacer()
+            HeaderView()
+            Spacer()
+            Divider()
+            EmailTextField(email: $email)
+            PasswordTextField(password: $password)
+            SigninButton(action: {}, label: "Sign in")
+            Divider()
+            SignupView()
+        }
     }
 }
 
@@ -19,3 +30,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
+
+
