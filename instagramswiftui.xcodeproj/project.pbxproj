@@ -18,6 +18,9 @@
 		AD16834B257A711700913496 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD16834A257A711700913496 /* HeaderView.swift */; };
 		AD16834E257A718700913496 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD16834D257A718700913496 /* Modifiers.swift */; };
 		AD168352257A747700913496 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD168351257A747700913496 /* Constants.swift */; };
+		AD7D02E7257B74DA00B176F7 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D02E6257B74DA00B176F7 /* SignupView.swift */; };
+		AD7D02EB257B775F00B176F7 /* UsernameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D02EA257B775F00B176F7 /* UsernameTextField.swift */; };
+		AD7D02EE257B79EB00B176F7 /* SignupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D02ED257B79EB00B176F7 /* SignupButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		AD16834A257A711700913496 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		AD16834D257A718700913496 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		AD168351257A747700913496 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AD7D02E6257B74DA00B176F7 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		AD7D02EA257B775F00B176F7 /* UsernameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextField.swift; sourceTree = "<group>"; };
+		AD7D02ED257B79EB00B176F7 /* SignupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +74,6 @@
 			children = (
 				AD16833B257A6FCA00913496 /* Views */,
 				AD16832B257A3E6500913496 /* instagramswiftuiApp.swift */,
-				AD16832D257A3E6500913496 /* SigninView.swift */,
 				AD16832F257A3E6700913496 /* Assets.xcassets */,
 				AD168334257A3E6700913496 /* Info.plist */,
 				AD168331257A3E6700913496 /* Preview Content */,
@@ -87,6 +92,7 @@
 		AD16833B257A6FCA00913496 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AD7D02E5257B74C700B176F7 /* Screens */,
 				AD168350257A745D00913496 /* Helpers */,
 				AD16833C257A6FDE00913496 /* Components */,
 			);
@@ -101,6 +107,8 @@
 				AD168344257A70C000913496 /* PasswordTextField.swift */,
 				AD168347257A70E400913496 /* EmailTextField.swift */,
 				AD16834A257A711700913496 /* HeaderView.swift */,
+				AD7D02EA257B775F00B176F7 /* UsernameTextField.swift */,
+				AD7D02ED257B79EB00B176F7 /* SignupButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -112,6 +120,15 @@
 				AD168351257A747700913496 /* Constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AD7D02E5257B74C700B176F7 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				AD16832D257A3E6500913496 /* SigninView.swift */,
+				AD7D02E6257B74DA00B176F7 /* SignupView.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,11 +204,14 @@
 				AD168342257A706B00913496 /* ToSignupView.swift in Sources */,
 				AD168348257A70E400913496 /* EmailTextField.swift in Sources */,
 				AD16832E257A3E6500913496 /* SigninView.swift in Sources */,
+				AD7D02E7257B74DA00B176F7 /* SignupView.swift in Sources */,
 				AD16834E257A718700913496 /* Modifiers.swift in Sources */,
 				AD16833E257A701200913496 /* SigninButton.swift in Sources */,
+				AD7D02EE257B79EB00B176F7 /* SignupButton.swift in Sources */,
 				AD16832C257A3E6500913496 /* instagramswiftuiApp.swift in Sources */,
 				AD16834B257A711700913496 /* HeaderView.swift in Sources */,
 				AD168352257A747700913496 /* Constants.swift in Sources */,
+				AD7D02EB257B775F00B176F7 /* UsernameTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
