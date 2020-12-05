@@ -19,7 +19,7 @@ struct SignupView: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 80, height: 80)
                 .clipShape(Circle())
-                .padding(.bottom, 5)
+                .padding()
             UsernameTextField(username: $username)
             EmailTextField(email: $email)
             VStack(alignment:.leading) {
