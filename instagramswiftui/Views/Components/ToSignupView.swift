@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SignupView: View {
+struct ToSignupView: View {
     var body: some View {
         HStack{
             Text(TEXT_NEED_AN_ACCOUNT)

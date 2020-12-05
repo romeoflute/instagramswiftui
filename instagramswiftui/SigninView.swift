@@ -20,7 +20,7 @@ struct SigninView: View {
             PasswordTextField(password: $password)
             SigninButton(action: {}, label: "Sign in")
             Divider()
-            SignupView()
+            ToSignupView()
         }
     }
 }
