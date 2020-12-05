@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD16832C257A3E6500913496 /* instagramswiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD16832B257A3E6500913496 /* instagramswiftuiApp.swift */; };
-		AD16832E257A3E6500913496 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD16832D257A3E6500913496 /* ContentView.swift */; };
+		AD16832E257A3E6500913496 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD16832D257A3E6500913496 /* SigninView.swift */; };
 		AD168330257A3E6700913496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD16832F257A3E6700913496 /* Assets.xcassets */; };
 		AD168333257A3E6700913496 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD168332257A3E6700913496 /* Preview Assets.xcassets */; };
 		AD16833E257A701200913496 /* SigninButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD16833D257A701000913496 /* SigninButton.swift */; };
@@ -23,7 +23,7 @@
 /* Begin PBXFileReference section */
 		AD168328257A3E6500913496 /* instagramswiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagramswiftui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD16832B257A3E6500913496 /* instagramswiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instagramswiftuiApp.swift; sourceTree = "<group>"; };
-		AD16832D257A3E6500913496 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AD16832D257A3E6500913496 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		AD16832F257A3E6700913496 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD168332257A3E6700913496 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AD168334257A3E6700913496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 			children = (
 				AD16833B257A6FCA00913496 /* Views */,
 				AD16832B257A3E6500913496 /* instagramswiftuiApp.swift */,
-				AD16832D257A3E6500913496 /* ContentView.swift */,
+				AD16832D257A3E6500913496 /* SigninView.swift */,
 				AD16832F257A3E6700913496 /* Assets.xcassets */,
 				AD168334257A3E6700913496 /* Info.plist */,
 				AD168331257A3E6700913496 /* Preview Content */,
@@ -186,7 +186,7 @@
 				AD168345257A70C000913496 /* PasswordTextField.swift in Sources */,
 				AD168342257A706B00913496 /* SignupView.swift in Sources */,
 				AD168348257A70E400913496 /* EmailTextField.swift in Sources */,
-				AD16832E257A3E6500913496 /* ContentView.swift in Sources */,
+				AD16832E257A3E6500913496 /* SigninView.swift in Sources */,
 				AD16834E257A718700913496 /* Modifiers.swift in Sources */,
 				AD16833E257A701200913496 /* SigninButton.swift in Sources */,
 				AD16832C257A3E6500913496 /* instagramswiftuiApp.swift in Sources */,
