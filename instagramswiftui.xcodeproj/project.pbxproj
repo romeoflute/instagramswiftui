@@ -29,6 +29,7 @@
 		AD8F5683257BD6C00081001F /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = AD8F5682257BD6C00081001F /* FirebaseFunctions */; };
 		AD8F5685257BD6C00081001F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AD8F5684257BD6C00081001F /* FirebaseAuth */; };
 		AD8F5687257BD6C00081001F /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = AD8F5686257BD6C00081001F /* FirebaseInAppMessaging-Beta */; };
+		AD8F568A257BDB340081001F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5689257BDB340081001F /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		AD7D02EA257B775F00B176F7 /* UsernameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextField.swift; sourceTree = "<group>"; };
 		AD7D02ED257B79EB00B176F7 /* SignupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupButton.swift; sourceTree = "<group>"; };
 		AD8F5674257BD3110081001F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AD8F5689257BDB340081001F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			children = (
 				AD16834D257A718700913496 /* Modifiers.swift */,
 				AD168351257A747700913496 /* Constants.swift */,
+				AD8F5689257BDB340081001F /* ImagePicker.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				AD7D02EE257B79EB00B176F7 /* SignupButton.swift in Sources */,
 				AD16832C257A3E6500913496 /* instagramswiftuiApp.swift in Sources */,
 				AD16834B257A711700913496 /* HeaderView.swift in Sources */,
+				AD8F568A257BDB340081001F /* ImagePicker.swift in Sources */,
 				AD168352257A747700913496 /* Constants.swift in Sources */,
 				AD7D02EB257B775F00B176F7 /* UsernameTextField.swift in Sources */,
 			);
