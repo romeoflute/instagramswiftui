@@ -40,6 +40,7 @@ struct SignupView: View {
                 .fixedSize(horizontal: false, vertical: true)
                 .lineLimit(nil)
         }
+        .navigationBarTitle("Register", displayMode: .inline)
     }
 }
 

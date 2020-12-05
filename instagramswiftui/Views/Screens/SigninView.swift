@@ -11,17 +11,28 @@ struct SigninView: View {
     @State private var email = ""
     @State private var password = ""
     var body: some View {
-        VStack{
-            Spacer()
-            HeaderView()
-            Spacer()
-            Divider()
-            EmailTextField(email: $email)
-            PasswordTextField(password: $password)
-            SigninButton(action: {}, label: "Sign in")
-            Divider()
-            ToSignupView()
+        NavigationView {
+            VStack{
+                Spacer()
+                HeaderView()
+                Divider()
+                EmailTextField(email: $email)
+                PasswordTextField(password: $password)
+                SigninButton(action: {}, label: "Sign in")
+                Divider()
+                HStack{
+                    Text(TEXT_NEED_AN_ACCOUNT)
+                        .font(.footnote)
+                        .foregroundColor(.gray)
+                    NavigationLink(destination: SignupView()) {
+                        Text(TEXT_SIGN_UP)
+                            .foregroundColor(.black)
+                    }
+                }
+                Spacer()
+            }
         }
+        .accentColor(.black)
     }
 }
 
