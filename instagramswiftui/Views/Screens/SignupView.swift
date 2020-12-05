@@ -12,6 +12,11 @@ struct SignupView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var confirmPassword = ""
+    
+    func signup(){
+        
+    }
+    
     var body: some View {
         VStack{
             Image(IMAGE_USER_PLACEHOLDER)
