@@ -57,8 +57,12 @@ class SignupViewModel: ObservableObject {
                             let firestoreRoot = Firestore.firestore()
                             let firestoreUsers = firestoreRoot.collection("users")
                             let firestoreUserId = firestoreUsers.document(userId)
-                            let userInfo = ["username": self.username, "email": self.email, "profileImageUrl": metaImageUrl]
-                            firestoreUserId.setData(userInfo)
+                            
+                            let user = User.init(uid: userId, email: email, profileImageUrl: metaImageUrl, username: username, bio: "", keywords: [])
+                            guard let dict = try? user.toDictionary() else {return}
+                            
+                            
+                            firestoreUserId.setData(dict)
                         }
                     }
                 }
