@@ -54,9 +54,7 @@ class SignupViewModel: ObservableObject {
                                 print("successfully updated image")
                             }
                             
-                            let firestoreRoot = Firestore.firestore()
-                            let firestoreUsers = firestoreRoot.collection("users")
-                            let firestoreUserId = firestoreUsers.document(userId)
+                            let firestoreUserId = Ref.FIRESTORE_DOCUMENT_USERID(userId: userId)
                             
                             let user = User.init(uid: userId, email: email, profileImageUrl: metaImageUrl, username: username, bio: "", keywords: [])
                             guard let dict = try? user.toDictionary() else {return}
