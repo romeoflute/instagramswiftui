@@ -6,64 +6,56 @@
 //
 
 import SwiftUI
-import FirebaseAuth
-import Firebase
 
 struct SignupView: View {
-    @State private var username = ""
-    @State private var email = ""
-    @State private var password = ""
-    @State private var confirmPassword = ""
-    @State private var showImagePicker:Bool = false
+
+    @ObservedObject var signupViewModel = SignupViewModel()
     
-    @State private var image: Image = Image(IMAGE_USER_PLACEHOLDER)
-    @State private var imageData: Data = Data()
-    let mv = SignupViewModel()
-    
-    func signup(){
-        mv.signup(username: username, email: email, password: password, imageData: imageData) { (user) in
-            
-        } onError: { (errorMessage) in
-            print("There was an error while registering the user: \(errorMessage)")
+    func signUp() {
+        signupViewModel.signup(username: signupViewModel.username, email: signupViewModel.email, password: signupViewModel.password, imageData: signupViewModel.imageData, completed: { (user) in
+            print(user.email)
+            self.clean()
+            // Switch to the Main App
+        }) { (errorMessage) in
+            print("Error: \(errorMessage)")
+            self.signupViewModel.showAlert = true
+            self.signupViewModel.errorString = errorMessage
+            self.clean()
         }
     }
     
+    func clean() {
+        self.signupViewModel.username = ""
+        self.signupViewModel.email = ""
+        self.signupViewModel.password = ""
+    }
     
     var body: some View {
-        VStack{
-            image
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 80, height: 80)
-                .clipShape(Circle())
-                .padding()
-                .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
-                    showImagePicker = true
-                })
-            UsernameTextField(username: $username)
-            EmailTextField(email: $email)
-            VStack(alignment:.leading) {
-                PasswordTextField(password: $password)
-                Text(TEXT_SIGNUP_PASSWORD_REQUIRED)
-                    .font(.footnote)
-                    .foregroundColor(.gray)
-                    .padding(.leading)
+        VStack {
+            signupViewModel.image.resizable().aspectRatio(contentMode: .fill).frame(width: 80, height: 80)
+                .clipShape(Circle()).padding(.bottom, 80)
+                .onTapGesture {
+                    print("Tapped")
+                    self.signupViewModel.showImagePicker = true
             }
-            SignupButton(action: {
-                signup()
-            }, label: TEXT_SIGN_UP)
+            UsernameTextField(username: $signupViewModel.username)
+            EmailTextField(email: $signupViewModel.email)
+            VStack(alignment: .leading) {
+                PasswordTextField(password: $signupViewModel.password)
+                Text(TEXT_SIGNUP_PASSWORD_REQUIRED).font(.footnote).foregroundColor(.gray).padding([.leading])
+            }
+            SignupButton(action: signUp, label: TEXT_SIGN_UP)
+                .alert(isPresented: $signupViewModel.showAlert) {
+                    Alert(title: Text("Error"), message: Text(self.signupViewModel.errorString), dismissButton: .default(Text("OK")))
+                }
             Divider()
-            Text(TEXT_SIGNUP_NOTE)
-                .font(.footnote)
-                .foregroundColor(.gray)
-                .padding()
-                .fixedSize(horizontal: false, vertical: true)
-                .lineLimit(nil)
+            Text(TEXT_SIGNUP_NOTE).font(.footnote).foregroundColor(.gray).padding().lineLimit(nil)
+            
+        }.sheet(isPresented: $signupViewModel.showImagePicker) {
+           // ImagePickerController()
+            ImagePicker(showImagePicker: self.$signupViewModel.showImagePicker, pickedImage: self.$signupViewModel.image, imageData: self.$signupViewModel.imageData)
         }
         .navigationBarTitle("Register", displayMode: .inline)
-        .sheet(isPresented: $showImagePicker){
-            ImagePicker(showImagePicker: self.$showImagePicker, pickedImage: self.$image, imageData: self.$imageData)
-        }
     }
 }
 
