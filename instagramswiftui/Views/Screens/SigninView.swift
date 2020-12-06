@@ -8,17 +8,41 @@
 import SwiftUI
 
 struct SigninView: View {
-    @State private var email = ""
-    @State private var password = ""
+    
+    @ObservedObject var signinViewModel = SigninViewModel()
+    
+    func signIn() {
+        signinViewModel.signin(email: signinViewModel.email, password: signinViewModel.password, completed: { (user) in
+            print("login complete: ", user.email)
+            self.clean()
+            // Switch to the Main App
+        }) { (errorMessage) in
+            print("Error: \(errorMessage)")
+            self.signinViewModel.showAlert = true
+            self.signinViewModel.errorString = errorMessage
+            self.clean()
+        }
+    }
+    
+    func clean() {
+        self.signinViewModel.email = ""
+        self.signinViewModel.password = ""
+    }
+    
+    
     var body: some View {
         NavigationView {
             VStack{
                 Spacer()
                 HeaderView()
                 Divider()
-                EmailTextField(email: $email)
-                PasswordTextField(password: $password)
-                SigninButton(action: {}, label: "Sign in")
+                EmailTextField(email: $signinViewModel.email)
+                PasswordTextField(password: $signinViewModel.password)
+                
+                SigninButton(action: signIn, label: TEXT_SIGN_IN)
+                    .alert(isPresented: $signinViewModel.showAlert) {
+                        Alert(title: Text("Error"), message: Text(self.signinViewModel.errorString), dismissButton: .default(Text("OK")))
+                    }
                 Divider()
                 HStack{
                     Text(TEXT_NEED_AN_ACCOUNT)
