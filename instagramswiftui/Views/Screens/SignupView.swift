@@ -18,49 +18,16 @@ struct SignupView: View {
     
     @State private var image: Image = Image(IMAGE_USER_PLACEHOLDER)
     @State private var imageData: Data = Data()
+    let mv = SignupViewModel()
     
     func signup(){
-        Auth.auth().createUser(withEmail: email, password: password) { (authData, error) in
-            if error != nil {
-                print("error encountered: \(error?.localizedDescription ?? "")")
-                return
-            }
-            let storageRoot = Storage.storage().reference(forURL: "gs://instagramswiftui-103e5.appspot.com")
-            let storageAvatar = storageRoot.child("avatar")
+        mv.signup(username: username, email: email, password: password, imageData: imageData) { (user) in
             
-            guard let userId = authData?.user.uid else {return}
-            let storageAvatarUserId = storageAvatar.child(userId)
-            let metadata = StorageMetadata()
-            metadata.contentType = "image/jpg"
-            storageAvatarUserId.putData(self.imageData, metadata: metadata) { (storageMetadata, error) in
-                if error != nil {
-                    print("error encountered: \(error?.localizedDescription ?? "")")
-                    return
-                }
-                storageAvatarUserId.downloadURL { (url, error) in
-                    if let metaImageUrl = url?.absoluteString{
-                        if let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest(){
-                            changeRequest.photoURL = url
-                            changeRequest.displayName = self.username
-                            changeRequest.commitChanges { (error) in
-                                if error != nil {
-                                    print("error encountered: \(error?.localizedDescription ?? "")")
-                                    return
-                                }
-                                print("successfully updated image")
-                            }
-                            
-                            let firestoreRoot = Firestore.firestore()
-                            let firestoreUsers = firestoreRoot.collection("users")
-                            let firestoreUserId = firestoreUsers.document(userId)
-                            let userInfo = ["username": self.username, "email": self.email, "profileImageUrl": metaImageUrl]
-                            firestoreUserId.setData(userInfo)
-                        }
-                    }
-                }
-            }
+        } onError: { (errorMessage) in
+            print("There was an error while registering the user: \(errorMessage)")
         }
     }
+    
     
     var body: some View {
         VStack{

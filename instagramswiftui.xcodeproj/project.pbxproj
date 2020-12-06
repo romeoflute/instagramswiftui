@@ -30,6 +30,9 @@
 		AD8F5685257BD6C00081001F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AD8F5684257BD6C00081001F /* FirebaseAuth */; };
 		AD8F5687257BD6C00081001F /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = AD8F5686257BD6C00081001F /* FirebaseInAppMessaging-Beta */; };
 		AD8F568A257BDB340081001F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5689257BDB340081001F /* ImagePicker.swift */; };
+		AD8F568F257C8D0F0081001F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F568E257C8D0E0081001F /* User.swift */; };
+		AD8F5693257C90B00081001F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5692257C90B00081001F /* Extensions.swift */; };
+		AD8F569A257C92910081001F /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F5699257C92910081001F /* SignupViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		AD7D02ED257B79EB00B176F7 /* SignupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupButton.swift; sourceTree = "<group>"; };
 		AD8F5674257BD3110081001F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD8F5689257BDB340081001F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		AD8F568E257C8D0E0081001F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AD8F5692257C90B00081001F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AD8F5699257C92910081001F /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,9 @@
 		AD16832A257A3E6500913496 /* instagramswiftui */ = {
 			isa = PBXGroup;
 			children = (
+				AD168350257A745D00913496 /* Helpers */,
+				AD8F568D257C8CF90081001F /* Model */,
+				AD8F568C257C8CEB0081001F /* ViewModel */,
 				AD16833B257A6FCA00913496 /* Views */,
 				AD16832B257A3E6500913496 /* instagramswiftuiApp.swift */,
 				AD16832F257A3E6700913496 /* Assets.xcassets */,
@@ -112,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				AD7D02E5257B74C700B176F7 /* Screens */,
-				AD168350257A745D00913496 /* Helpers */,
 				AD16833C257A6FDE00913496 /* Components */,
 			);
 			path = Views;
@@ -137,6 +145,7 @@
 				AD16834D257A718700913496 /* Modifiers.swift */,
 				AD168351257A747700913496 /* Constants.swift */,
 				AD8F5689257BDB340081001F /* ImagePicker.swift */,
+				AD8F5692257C90B00081001F /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -148,6 +157,22 @@
 				AD7D02E6257B74DA00B176F7 /* SignupView.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		AD8F568C257C8CEB0081001F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AD8F5699257C92910081001F /* SignupViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AD8F568D257C8CF90081001F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AD8F568E257C8D0E0081001F /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,11 +258,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD8F568F257C8D0F0081001F /* User.swift in Sources */,
 				AD168345257A70C000913496 /* PasswordTextField.swift in Sources */,
 				AD168348257A70E400913496 /* EmailTextField.swift in Sources */,
 				AD16832E257A3E6500913496 /* SigninView.swift in Sources */,
 				AD7D02E7257B74DA00B176F7 /* SignupView.swift in Sources */,
 				AD16834E257A718700913496 /* Modifiers.swift in Sources */,
+				AD8F569A257C92910081001F /* SignupViewModel.swift in Sources */,
 				AD16833E257A701200913496 /* SigninButton.swift in Sources */,
 				AD7D02EE257B79EB00B176F7 /* SignupButton.swift in Sources */,
 				AD16832C257A3E6500913496 /* instagramswiftuiApp.swift in Sources */,
@@ -245,6 +272,7 @@
 				AD8F568A257BDB340081001F /* ImagePicker.swift in Sources */,
 				AD168352257A747700913496 /* Constants.swift in Sources */,
 				AD7D02EB257B775F00B176F7 /* UsernameTextField.swift in Sources */,
+				AD8F5693257C90B00081001F /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
