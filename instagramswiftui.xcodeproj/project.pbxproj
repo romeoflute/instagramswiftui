@@ -36,6 +36,9 @@
 		AD8F569D257CBDEC0081001F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F569C257CBDEC0081001F /* AuthService.swift */; };
 		AD8F56A0257CBE380081001F /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F569F257CBE380081001F /* StorageService.swift */; };
 		AD8F56A3257D10B70081001F /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F56A2257D10B70081001F /* SigninViewModel.swift */; };
+		AD90D4DD257E5BEF00040F4E /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D4DC257E5BEF00040F4E /* InitialView.swift */; };
+		AD90D4E1257E5CDA00040F4E /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D4E0257E5CDA00040F4E /* SessionStore.swift */; };
+		AD90D4E5257E5F7800040F4E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D4E4257E5F7800040F4E /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		AD8F569C257CBDEC0081001F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		AD8F569F257CBE380081001F /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		AD8F56A2257D10B70081001F /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
+		AD90D4DC257E5BEF00040F4E /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
+		AD90D4E0257E5CDA00040F4E /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		AD90D4E4257E5F7800040F4E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,7 @@
 		AD16833B257A6FCA00913496 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AD90D4DF257E5CBF00040F4E /* Initial */,
 				AD7D02E5257B74C700B176F7 /* Screens */,
 				AD16833C257A6FDE00913496 /* Components */,
 			);
@@ -154,6 +161,7 @@
 				AD8F5692257C90B00081001F /* Extensions.swift */,
 				AD8F569C257CBDEC0081001F /* AuthService.swift */,
 				AD8F569F257CBE380081001F /* StorageService.swift */,
+				AD90D4E0257E5CDA00040F4E /* SessionStore.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -182,6 +190,15 @@
 				AD8F568E257C8D0E0081001F /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AD90D4DF257E5CBF00040F4E /* Initial */ = {
+			isa = PBXGroup;
+			children = (
+				AD90D4DC257E5BEF00040F4E /* InitialView.swift */,
+				AD90D4E4257E5F7800040F4E /* MainView.swift */,
+			);
+			path = Initial;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,16 +285,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD8F568F257C8D0F0081001F /* User.swift in Sources */,
+				AD90D4E5257E5F7800040F4E /* MainView.swift in Sources */,
 				AD168345257A70C000913496 /* PasswordTextField.swift in Sources */,
 				AD168348257A70E400913496 /* EmailTextField.swift in Sources */,
 				AD16832E257A3E6500913496 /* SigninView.swift in Sources */,
 				AD7D02E7257B74DA00B176F7 /* SignupView.swift in Sources */,
 				AD16834E257A718700913496 /* Modifiers.swift in Sources */,
+				AD90D4E1257E5CDA00040F4E /* SessionStore.swift in Sources */,
 				AD8F569A257C92910081001F /* SignupViewModel.swift in Sources */,
 				AD16833E257A701200913496 /* SigninButton.swift in Sources */,
 				AD7D02EE257B79EB00B176F7 /* SignupButton.swift in Sources */,
 				AD16832C257A3E6500913496 /* instagramswiftuiApp.swift in Sources */,
 				AD16834B257A711700913496 /* HeaderView.swift in Sources */,
+				AD90D4DD257E5BEF00040F4E /* InitialView.swift in Sources */,
 				AD8F568A257BDB340081001F /* ImagePicker.swift in Sources */,
 				AD8F56A3257D10B70081001F /* SigninViewModel.swift in Sources */,
 				AD8F56A0257CBE380081001F /* StorageService.swift in Sources */,
