@@ -42,6 +42,8 @@
 		AD90D4E8257F151800040F4E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D4E7257F151800040F4E /* SearchBar.swift */; };
 		AD90D4EB257F21A500040F4E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D4EA257F21A500040F4E /* HomeView.swift */; };
 		AD90D4EE257F326F00040F4E /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D4ED257F326F00040F4E /* Story.swift */; };
+		AD90D4F8257F3A8400040F4E /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D4F7257F3A8400040F4E /* HeaderCell.swift */; };
+		AD90D4FB257F3A9600040F4E /* FooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D4FA257F3A9600040F4E /* FooterCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		AD90D4E7257F151800040F4E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		AD90D4EA257F21A500040F4E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		AD90D4ED257F326F00040F4E /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		AD90D4F7257F3A8400040F4E /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		AD90D4FA257F3A9600040F4E /* FooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,9 +181,9 @@
 		AD7D02E5257B74C700B176F7 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				AD90D4FD257F3AAA00040F4E /* Home */,
 				AD16832D257A3E6500913496 /* SigninView.swift */,
 				AD7D02E6257B74DA00B176F7 /* SignupView.swift */,
-				AD90D4EA257F21A500040F4E /* HomeView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -208,6 +212,16 @@
 				AD90D4E4257E5F7800040F4E /* MainView.swift */,
 			);
 			path = Initial;
+			sourceTree = "<group>";
+		};
+		AD90D4FD257F3AAA00040F4E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AD90D4EA257F21A500040F4E /* HomeView.swift */,
+				AD90D4F7257F3A8400040F4E /* HeaderCell.swift */,
+				AD90D4FA257F3A9600040F4E /* FooterCell.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,11 +313,13 @@
 				AD168348257A70E400913496 /* EmailTextField.swift in Sources */,
 				AD16832E257A3E6500913496 /* SigninView.swift in Sources */,
 				AD7D02E7257B74DA00B176F7 /* SignupView.swift in Sources */,
+				AD90D4FB257F3A9600040F4E /* FooterCell.swift in Sources */,
 				AD16834E257A718700913496 /* Modifiers.swift in Sources */,
 				AD90D4E1257E5CDA00040F4E /* SessionStore.swift in Sources */,
 				AD8F569A257C92910081001F /* SignupViewModel.swift in Sources */,
 				AD90D4E8257F151800040F4E /* SearchBar.swift in Sources */,
 				AD16833E257A701200913496 /* SigninButton.swift in Sources */,
+				AD90D4F8257F3A8400040F4E /* HeaderCell.swift in Sources */,
 				AD7D02EE257B79EB00B176F7 /* SignupButton.swift in Sources */,
 				AD16832C257A3E6500913496 /* instagramswiftuiApp.swift in Sources */,
 				AD16834B257A711700913496 /* HeaderView.swift in Sources */,
