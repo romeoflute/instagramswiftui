@@ -118,6 +118,9 @@
 		AD16832A257A3E6500913496 /* instagramswiftui */ = {
 			isa = PBXGroup;
 			children = (
+				AD90D501257F3C1A00040F4E /* Modifiers */,
+				AD90D500257F3C0100040F4E /* Session */,
+				AD90D4FF257F3BDD00040F4E /* Services */,
 				AD168350257A745D00913496 /* Helpers */,
 				AD8F568D257C8CF90081001F /* Model */,
 				AD8F568C257C8CEB0081001F /* ViewModel */,
@@ -152,6 +155,7 @@
 		AD16833C257A6FDE00913496 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AD90D4FD257F3AAA00040F4E /* Home */,
 				AD16833D257A701000913496 /* SigninButton.swift */,
 				AD168344257A70C000913496 /* PasswordTextField.swift */,
 				AD168347257A70E400913496 /* EmailTextField.swift */,
@@ -167,13 +171,9 @@
 		AD168350257A745D00913496 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				AD16834D257A718700913496 /* Modifiers.swift */,
 				AD168351257A747700913496 /* Constants.swift */,
 				AD8F5689257BDB340081001F /* ImagePicker.swift */,
 				AD8F5692257C90B00081001F /* Extensions.swift */,
-				AD8F569C257CBDEC0081001F /* AuthService.swift */,
-				AD8F569F257CBE380081001F /* StorageService.swift */,
-				AD90D4E0257E5CDA00040F4E /* SessionStore.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -181,9 +181,7 @@
 		AD7D02E5257B74C700B176F7 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				AD90D4FD257F3AAA00040F4E /* Home */,
-				AD16832D257A3E6500913496 /* SigninView.swift */,
-				AD7D02E6257B74DA00B176F7 /* SignupView.swift */,
+				AD90D4EA257F21A500040F4E /* HomeView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -191,8 +189,7 @@
 		AD8F568C257C8CEB0081001F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				AD8F5699257C92910081001F /* SignupViewModel.swift */,
-				AD8F56A2257D10B70081001F /* SigninViewModel.swift */,
+				AD90D4FE257F3BA000040F4E /* Auth */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -210,6 +207,8 @@
 			children = (
 				AD90D4DC257E5BEF00040F4E /* InitialView.swift */,
 				AD90D4E4257E5F7800040F4E /* MainView.swift */,
+				AD16832D257A3E6500913496 /* SigninView.swift */,
+				AD7D02E6257B74DA00B176F7 /* SignupView.swift */,
 			);
 			path = Initial;
 			sourceTree = "<group>";
@@ -217,11 +216,44 @@
 		AD90D4FD257F3AAA00040F4E /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				AD90D4EA257F21A500040F4E /* HomeView.swift */,
 				AD90D4F7257F3A8400040F4E /* HeaderCell.swift */,
 				AD90D4FA257F3A9600040F4E /* FooterCell.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		AD90D4FE257F3BA000040F4E /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				AD8F5699257C92910081001F /* SignupViewModel.swift */,
+				AD8F56A2257D10B70081001F /* SigninViewModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		AD90D4FF257F3BDD00040F4E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AD8F569C257CBDEC0081001F /* AuthService.swift */,
+				AD8F569F257CBE380081001F /* StorageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AD90D500257F3C0100040F4E /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				AD90D4E0257E5CDA00040F4E /* SessionStore.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		AD90D501257F3C1A00040F4E /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				AD16834D257A718700913496 /* Modifiers.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
