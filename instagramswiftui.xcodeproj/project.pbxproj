@@ -47,6 +47,8 @@
 		AD90D504257F46C600040F4E /* CommentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D503257F46C600040F4E /* CommentRow.swift */; };
 		AD90D507257F477100040F4E /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D506257F477100040F4E /* CommentView.swift */; };
 		AD90D50B257F47A800040F4E /* CommentInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D50A257F47A800040F4E /* CommentInput.swift */; };
+		AD90D50F257F6A0100040F4E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D50E257F6A0100040F4E /* SearchView.swift */; };
+		AD90D513257F8E5900040F4E /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D512257F8E5900040F4E /* CameraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +86,8 @@
 		AD90D503257F46C600040F4E /* CommentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRow.swift; sourceTree = "<group>"; };
 		AD90D506257F477100040F4E /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		AD90D50A257F47A800040F4E /* CommentInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInput.swift; sourceTree = "<group>"; };
+		AD90D50E257F6A0100040F4E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		AD90D512257F8E5900040F4E /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +195,8 @@
 			children = (
 				AD90D4EA257F21A500040F4E /* HomeView.swift */,
 				AD90D506257F477100040F4E /* CommentView.swift */,
+				AD90D50E257F6A0100040F4E /* SearchView.swift */,
+				AD90D512257F8E5900040F4E /* CameraView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -355,9 +361,11 @@
 				AD16832E257A3E6500913496 /* SigninView.swift in Sources */,
 				AD7D02E7257B74DA00B176F7 /* SignupView.swift in Sources */,
 				AD90D4FB257F3A9600040F4E /* FooterCell.swift in Sources */,
+				AD90D513257F8E5900040F4E /* CameraView.swift in Sources */,
 				AD16834E257A718700913496 /* Modifiers.swift in Sources */,
 				AD90D4E1257E5CDA00040F4E /* SessionStore.swift in Sources */,
 				AD8F569A257C92910081001F /* SignupViewModel.swift in Sources */,
+				AD90D50F257F6A0100040F4E /* SearchView.swift in Sources */,
 				AD90D4E8257F151800040F4E /* SearchBar.swift in Sources */,
 				AD16833E257A701200913496 /* SigninButton.swift in Sources */,
 				AD90D4F8257F3A8400040F4E /* HeaderCell.swift in Sources */,

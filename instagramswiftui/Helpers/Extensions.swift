@@ -9,6 +9,24 @@ import SwiftUI
 import Firebase
 import FirebaseStorage
 
+extension Array {
+    func splited(into size:Int) -> [[Element]] {
+        
+        var splittedArray = [[Element]]()
+        
+        for index in 0...self.count {
+            if index % size == 0 && index != 0 {
+                splittedArray.append(Array(self[(index - size)..<index]))
+            } else if(index == self.count) {
+                splittedArray.append(Array(self[index - 1..<index]))
+            }
+        }
+        
+        return splittedArray
+    }
+}
+
+
 extension Encodable {
     func toDictionary() throws -> [String: Any] {
         let data = try JSONEncoder().encode(self)

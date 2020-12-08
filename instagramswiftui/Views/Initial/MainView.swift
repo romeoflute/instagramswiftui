@@ -21,12 +21,12 @@ struct MainView: View {
                     Image(systemName: "house.fill")
                     Text("Home")
                 }.tag(0)
-            Text("Discover")
+            SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Discover")
                 }.tag(1)
-            Text("Camera")
+            CameraView()
                 .tabItem {
                     Image(systemName: "camera.viewfinder")
                     Text("Camera")
