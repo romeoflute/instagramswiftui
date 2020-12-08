@@ -39,6 +39,7 @@
 		AD90D4DD257E5BEF00040F4E /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D4DC257E5BEF00040F4E /* InitialView.swift */; };
 		AD90D4E1257E5CDA00040F4E /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D4E0257E5CDA00040F4E /* SessionStore.swift */; };
 		AD90D4E5257E5F7800040F4E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D4E4257E5F7800040F4E /* MainView.swift */; };
+		AD90D4E8257F151800040F4E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D4E7257F151800040F4E /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		AD90D4DC257E5BEF00040F4E /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 		AD90D4E0257E5CDA00040F4E /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		AD90D4E4257E5F7800040F4E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		AD90D4E7257F151800040F4E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				AD16834A257A711700913496 /* HeaderView.swift */,
 				AD7D02EA257B775F00B176F7 /* UsernameTextField.swift */,
 				AD7D02ED257B79EB00B176F7 /* SignupButton.swift */,
+				AD90D4E7257F151800040F4E /* SearchBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				AD16834E257A718700913496 /* Modifiers.swift in Sources */,
 				AD90D4E1257E5CDA00040F4E /* SessionStore.swift in Sources */,
 				AD8F569A257C92910081001F /* SignupViewModel.swift in Sources */,
+				AD90D4E8257F151800040F4E /* SearchBar.swift in Sources */,
 				AD16833E257A701200913496 /* SigninButton.swift in Sources */,
 				AD7D02EE257B79EB00B176F7 /* SignupButton.swift in Sources */,
 				AD16832C257A3E6500913496 /* instagramswiftuiApp.swift in Sources */,
