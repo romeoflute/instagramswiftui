@@ -41,6 +41,7 @@
 		AD90D4E5257E5F7800040F4E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D4E4257E5F7800040F4E /* MainView.swift */; };
 		AD90D4E8257F151800040F4E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D4E7257F151800040F4E /* SearchBar.swift */; };
 		AD90D4EB257F21A500040F4E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D4EA257F21A500040F4E /* HomeView.swift */; };
+		AD90D4EE257F326F00040F4E /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D4ED257F326F00040F4E /* Story.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		AD90D4E4257E5F7800040F4E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		AD90D4E7257F151800040F4E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		AD90D4EA257F21A500040F4E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AD90D4ED257F326F00040F4E /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				AD7D02EA257B775F00B176F7 /* UsernameTextField.swift */,
 				AD7D02ED257B79EB00B176F7 /* SignupButton.swift */,
 				AD90D4E7257F151800040F4E /* SearchBar.swift */,
+				AD90D4ED257F326F00040F4E /* Story.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				AD8F5693257C90B00081001F /* Extensions.swift in Sources */,
 				AD90D4EB257F21A500040F4E /* HomeView.swift in Sources */,
 				AD8F569D257CBDEC0081001F /* AuthService.swift in Sources */,
+				AD90D4EE257F326F00040F4E /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

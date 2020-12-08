@@ -9,7 +9,17 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text("Hello Home View")
+        NavigationView{
+            List{
+                Story()
+                
+                ForEach(1..<10){ i in
+                    Text("Post")
+                }
+            }
+        }
+        .navigationBarTitle("Instagram")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
