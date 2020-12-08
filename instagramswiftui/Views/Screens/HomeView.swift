@@ -14,13 +14,10 @@ struct HomeView: View {
                Story()
                
                ForEach(1..<20) { _ in
-
-                       VStack {
-                             HeaderCell()
-                             FooterCell()
-                       }
-                   
-                 
+                   VStack {
+                         HeaderCell()
+                         FooterCell()
+                   }
                }
            }.navigationBarTitle(Text("Instagram"), displayMode: .inline)
        }
