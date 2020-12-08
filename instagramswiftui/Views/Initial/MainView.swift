@@ -14,12 +14,43 @@ struct MainView: View {
     }
     
     var body: some View {
-        Group {
-            Text((session.userSession == nil) ? "Loading..." : session.userSession!.email)
-            Button(action:logout, label: {
-                Text("Log out")
-            })
+        
+        TabView{
+            HomeView()
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Home")
+                }.tag(0)
+            Text("Discover")
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    Text("Discover")
+                }.tag(1)
+            Text("Camera")
+                .tabItem {
+                    Image(systemName: "camera.viewfinder")
+                    Text("Camera")
+                }.tag(2)
+            Text("Notifications")
+                .tabItem {
+                    Image(systemName: "heart.fill")
+                    Text("Notifications")
+                }.tag(3)
+            Text("Profile")
+                .tabItem {
+                    Image(systemName: "person.fill")
+                    Text("Profile")
+                }.tag(4)
         }
+        .accentColor(.black)
+        
+        
+//        Group {
+//            Text((session.userSession == nil) ? "Loading..." : session.userSession!.email)
+//            Button(action:logout, label: {
+//                Text("Log out")
+//            })
+//        }
     }
 }
 
