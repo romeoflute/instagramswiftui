@@ -44,6 +44,9 @@
 		AD90D4EE257F326F00040F4E /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D4ED257F326F00040F4E /* Story.swift */; };
 		AD90D4F8257F3A8400040F4E /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D4F7257F3A8400040F4E /* HeaderCell.swift */; };
 		AD90D4FB257F3A9600040F4E /* FooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D4FA257F3A9600040F4E /* FooterCell.swift */; };
+		AD90D504257F46C600040F4E /* CommentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D503257F46C600040F4E /* CommentRow.swift */; };
+		AD90D507257F477100040F4E /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D506257F477100040F4E /* CommentView.swift */; };
+		AD90D50B257F47A800040F4E /* CommentInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D50A257F47A800040F4E /* CommentInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +81,9 @@
 		AD90D4ED257F326F00040F4E /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		AD90D4F7257F3A8400040F4E /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		AD90D4FA257F3A9600040F4E /* FooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCell.swift; sourceTree = "<group>"; };
+		AD90D503257F46C600040F4E /* CommentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRow.swift; sourceTree = "<group>"; };
+		AD90D506257F477100040F4E /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
+		AD90D50A257F47A800040F4E /* CommentInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,8 @@
 				AD90D4FD257F3AAA00040F4E /* Home */,
 				AD16833D257A701000913496 /* SigninButton.swift */,
 				AD168344257A70C000913496 /* PasswordTextField.swift */,
+				AD90D503257F46C600040F4E /* CommentRow.swift */,
+				AD90D50A257F47A800040F4E /* CommentInput.swift */,
 				AD168347257A70E400913496 /* EmailTextField.swift */,
 				AD16834A257A711700913496 /* HeaderView.swift */,
 				AD7D02EA257B775F00B176F7 /* UsernameTextField.swift */,
@@ -182,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				AD90D4EA257F21A500040F4E /* HomeView.swift */,
+				AD90D506257F477100040F4E /* CommentView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -365,6 +374,9 @@
 				AD90D4EB257F21A500040F4E /* HomeView.swift in Sources */,
 				AD8F569D257CBDEC0081001F /* AuthService.swift in Sources */,
 				AD90D4EE257F326F00040F4E /* Story.swift in Sources */,
+				AD90D507257F477100040F4E /* CommentView.swift in Sources */,
+				AD90D504257F46C600040F4E /* CommentRow.swift in Sources */,
+				AD90D50B257F47A800040F4E /* CommentInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

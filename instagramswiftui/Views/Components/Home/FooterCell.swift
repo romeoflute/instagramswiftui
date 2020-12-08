@@ -12,7 +12,7 @@ struct FooterCell: View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
                 Image(systemName: "heart.fill")
-                NavigationLink(destination: Text("Detail View")) {
+                NavigationLink(destination: CommentView()) {
                     Image(systemName: "bubble.left")
                         .renderingMode(.original)
                 }
@@ -29,7 +29,7 @@ struct FooterCell: View {
             }
             .padding(.leading, 15)
             
-            NavigationLink(destination: Text("Detail View")) {
+            NavigationLink(destination: CommentView()) {
                 Text("View all comments")
                     .font(.caption)
                     .foregroundColor(.gray)
