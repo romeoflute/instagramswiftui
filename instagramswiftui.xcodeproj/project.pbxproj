@@ -49,6 +49,9 @@
 		AD90D50B257F47A800040F4E /* CommentInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D50A257F47A800040F4E /* CommentInput.swift */; };
 		AD90D50F257F6A0100040F4E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D50E257F6A0100040F4E /* SearchView.swift */; };
 		AD90D513257F8E5900040F4E /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D512257F8E5900040F4E /* CameraView.swift */; };
+		AD90D517257F904F00040F4E /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D516257F904F00040F4E /* NotificationView.swift */; };
+		AD90D51A257F91B700040F4E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D519257F91B700040F4E /* ProfileView.swift */; };
+		AD90D51E257F920800040F4E /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D51D257F920800040F4E /* ProfileHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +91,9 @@
 		AD90D50A257F47A800040F4E /* CommentInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInput.swift; sourceTree = "<group>"; };
 		AD90D50E257F6A0100040F4E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		AD90D512257F8E5900040F4E /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		AD90D516257F904F00040F4E /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		AD90D519257F91B700040F4E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		AD90D51D257F920800040F4E /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +171,7 @@
 		AD16833C257A6FDE00913496 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AD90D51C257F91E900040F4E /* Profile */,
 				AD90D4FD257F3AAA00040F4E /* Home */,
 				AD16833D257A701000913496 /* SigninButton.swift */,
 				AD168344257A70C000913496 /* PasswordTextField.swift */,
@@ -197,6 +204,8 @@
 				AD90D506257F477100040F4E /* CommentView.swift */,
 				AD90D50E257F6A0100040F4E /* SearchView.swift */,
 				AD90D512257F8E5900040F4E /* CameraView.swift */,
+				AD90D516257F904F00040F4E /* NotificationView.swift */,
+				AD90D519257F91B700040F4E /* ProfileView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -269,6 +278,14 @@
 				AD16834D257A718700913496 /* Modifiers.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		AD90D51C257F91E900040F4E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				AD90D51D257F920800040F4E /* ProfileHeader.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +381,7 @@
 				AD90D513257F8E5900040F4E /* CameraView.swift in Sources */,
 				AD16834E257A718700913496 /* Modifiers.swift in Sources */,
 				AD90D4E1257E5CDA00040F4E /* SessionStore.swift in Sources */,
+				AD90D51E257F920800040F4E /* ProfileHeader.swift in Sources */,
 				AD8F569A257C92910081001F /* SignupViewModel.swift in Sources */,
 				AD90D50F257F6A0100040F4E /* SearchView.swift in Sources */,
 				AD90D4E8257F151800040F4E /* SearchBar.swift in Sources */,
@@ -373,6 +391,7 @@
 				AD16832C257A3E6500913496 /* instagramswiftuiApp.swift in Sources */,
 				AD16834B257A711700913496 /* HeaderView.swift in Sources */,
 				AD90D4DD257E5BEF00040F4E /* InitialView.swift in Sources */,
+				AD90D517257F904F00040F4E /* NotificationView.swift in Sources */,
 				AD8F568A257BDB340081001F /* ImagePicker.swift in Sources */,
 				AD8F56A3257D10B70081001F /* SigninViewModel.swift in Sources */,
 				AD8F56A0257CBE380081001F /* StorageService.swift in Sources */,
@@ -384,6 +403,7 @@
 				AD90D4EE257F326F00040F4E /* Story.swift in Sources */,
 				AD90D507257F477100040F4E /* CommentView.swift in Sources */,
 				AD90D504257F46C600040F4E /* CommentRow.swift in Sources */,
+				AD90D51A257F91B700040F4E /* ProfileView.swift in Sources */,
 				AD90D50B257F47A800040F4E /* CommentInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

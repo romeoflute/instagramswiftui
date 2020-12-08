@@ -31,12 +31,12 @@ struct MainView: View {
                     Image(systemName: "camera.viewfinder")
                     Text("Camera")
                 }.tag(2)
-            Text("Notifications")
+            NotificationView()
                 .tabItem {
                     Image(systemName: "heart.fill")
                     Text("Notifications")
                 }.tag(3)
-            Text("Profile")
+            ProfileView()
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profile")
