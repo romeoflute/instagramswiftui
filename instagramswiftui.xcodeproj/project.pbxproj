@@ -52,6 +52,8 @@
 		AD90D517257F904F00040F4E /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D516257F904F00040F4E /* NotificationView.swift */; };
 		AD90D51A257F91B700040F4E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D519257F91B700040F4E /* ProfileView.swift */; };
 		AD90D51E257F920800040F4E /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D51D257F920800040F4E /* ProfileHeader.swift */; };
+		AD90D5222581FA3100040F4E /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D5212581FA3100040F4E /* UserProfileView.swift */; };
+		AD90D5262581FB2200040F4E /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90D5252581FB2200040F4E /* UsersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +96,8 @@
 		AD90D516257F904F00040F4E /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		AD90D519257F91B700040F4E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		AD90D51D257F920800040F4E /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		AD90D5212581FA3100040F4E /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		AD90D5252581FB2200040F4E /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,7 @@
 		AD16833C257A6FDE00913496 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AD90D5242581FB0D00040F4E /* UsersView */,
 				AD90D51C257F91E900040F4E /* Profile */,
 				AD90D4FD257F3AAA00040F4E /* Home */,
 				AD16833D257A701000913496 /* SigninButton.swift */,
@@ -284,8 +289,17 @@
 			isa = PBXGroup;
 			children = (
 				AD90D51D257F920800040F4E /* ProfileHeader.swift */,
+				AD90D5212581FA3100040F4E /* UserProfileView.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		AD90D5242581FB0D00040F4E /* UsersView */ = {
+			isa = PBXGroup;
+			children = (
+				AD90D5252581FB2200040F4E /* UsersView.swift */,
+			);
+			path = UsersView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD90D5222581FA3100040F4E /* UserProfileView.swift in Sources */,
 				AD8F568F257C8D0F0081001F /* User.swift in Sources */,
 				AD90D4E5257E5F7800040F4E /* MainView.swift in Sources */,
 				AD168345257A70C000913496 /* PasswordTextField.swift in Sources */,
@@ -393,6 +408,7 @@
 				AD90D4DD257E5BEF00040F4E /* InitialView.swift in Sources */,
 				AD90D517257F904F00040F4E /* NotificationView.swift in Sources */,
 				AD8F568A257BDB340081001F /* ImagePicker.swift in Sources */,
+				AD90D5262581FB2200040F4E /* UsersView.swift in Sources */,
 				AD8F56A3257D10B70081001F /* SigninViewModel.swift in Sources */,
 				AD8F56A0257CBE380081001F /* StorageService.swift in Sources */,
 				AD168352257A747700913496 /* Constants.swift in Sources */,
