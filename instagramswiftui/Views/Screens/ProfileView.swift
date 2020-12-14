@@ -50,7 +50,13 @@ struct ProfileView: View {
                     NavigationLink(destination: UsersView()) {
                         Image(systemName: "person.fill").imageScale(Image.Scale.large).foregroundColor(.black)
                     }
-                })
+                },trailing:
+                    Button(action: {
+                        self.session.logout()
+                    }) {
+                        Image(systemName: "arrow.right.circle.fill").imageScale(Image.Scale.large).foregroundColor(.black)
+                        
+                    } )
             }
         
         
