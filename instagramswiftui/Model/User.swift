@@ -14,6 +14,6 @@ struct User: Decodable, Encodable {
     var email: String
     var profileImageUrl: String
     var username: String
-//    var bio: String
-//    var keywords: [String]
+    var bio: String
+    var keywords: [String]
 }

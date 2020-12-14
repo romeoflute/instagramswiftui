@@ -11,6 +11,7 @@ struct InitialView: View {
     @EnvironmentObject var session: SessionStore
     func listen(){
         session.listenAuthenticationState()
+        session.logout()
     }
     var body: some View {
         Group{

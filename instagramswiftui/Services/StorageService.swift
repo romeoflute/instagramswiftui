@@ -30,7 +30,7 @@ class StorageService {
                         }
                                                     
                         let firestoreUserId = Ref.FIRESTORE_DOCUMENT_USERID(userId: userId)
-                        let user = User.init(uid: userId, email: email, profileImageUrl: metaImageUrl, username: username)
+                        let user = User.init(uid: userId, email: email, profileImageUrl: metaImageUrl, username: username, bio: "", keywords: username.splitStringToArray())
                         guard let dict = try? user.toDictionary() else {return}
                         
                         firestoreUserId.setData(dict) { (error) in
