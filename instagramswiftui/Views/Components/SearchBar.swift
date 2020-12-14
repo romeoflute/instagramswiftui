@@ -45,6 +45,4 @@ struct SearchBar: UIViewRepresentable {
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
-    
-    
 }

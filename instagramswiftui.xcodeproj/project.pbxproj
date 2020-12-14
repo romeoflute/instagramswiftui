@@ -17,6 +17,8 @@
 		AD16834B257A711700913496 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD16834A257A711700913496 /* HeaderView.swift */; };
 		AD16834E257A718700913496 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD16834D257A718700913496 /* Modifiers.swift */; };
 		AD168352257A747700913496 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD168351257A747700913496 /* Constants.swift */; };
+		AD61BAFB258714A600911902 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BAFA258714A600911902 /* MessagesView.swift */; };
+		AD61BAFE2587169800911902 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BAFD2587169800911902 /* ChatView.swift */; };
 		AD7D02E7257B74DA00B176F7 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D02E6257B74DA00B176F7 /* SignupView.swift */; };
 		AD7D02EB257B775F00B176F7 /* UsernameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D02EA257B775F00B176F7 /* UsernameTextField.swift */; };
 		AD7D02EE257B79EB00B176F7 /* SignupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D02ED257B79EB00B176F7 /* SignupButton.swift */; };
@@ -69,6 +71,8 @@
 		AD16834A257A711700913496 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		AD16834D257A718700913496 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		AD168351257A747700913496 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AD61BAFA258714A600911902 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		AD61BAFD2587169800911902 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		AD7D02E6257B74DA00B176F7 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		AD7D02EA257B775F00B176F7 /* UsernameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextField.swift; sourceTree = "<group>"; };
 		AD7D02ED257B79EB00B176F7 /* SignupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupButton.swift; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 				AD90D512257F8E5900040F4E /* CameraView.swift */,
 				AD90D516257F904F00040F4E /* NotificationView.swift */,
 				AD90D519257F91B700040F4E /* ProfileView.swift */,
+				AD61BAFA258714A600911902 /* MessagesView.swift */,
+				AD61BAFD2587169800911902 /* ChatView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -385,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD61BAFE2587169800911902 /* ChatView.swift in Sources */,
 				AD90D5222581FA3100040F4E /* UserProfileView.swift in Sources */,
 				AD8F568F257C8D0F0081001F /* User.swift in Sources */,
 				AD90D4E5257E5F7800040F4E /* MainView.swift in Sources */,
@@ -401,6 +408,7 @@
 				AD90D50F257F6A0100040F4E /* SearchView.swift in Sources */,
 				AD90D4E8257F151800040F4E /* SearchBar.swift in Sources */,
 				AD16833E257A701200913496 /* SigninButton.swift in Sources */,
+				AD61BAFB258714A600911902 /* MessagesView.swift in Sources */,
 				AD90D4F8257F3A8400040F4E /* HeaderCell.swift in Sources */,
 				AD7D02EE257B79EB00B176F7 /* SignupButton.swift in Sources */,
 				AD16832C257A3E6500913496 /* instagramswiftuiApp.swift in Sources */,
