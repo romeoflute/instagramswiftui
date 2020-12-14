@@ -22,6 +22,7 @@
 		AD61BB7E2587511D00911902 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BB7D2587511D00911902 /* UsersViewModel.swift */; };
 		AD61BB812587515700911902 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BB802587515700911902 /* Api.swift */; };
 		AD61BB842587518800911902 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BB832587518800911902 /* UserApi.swift */; };
+		AD61BBA025875B2200911902 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = AD61BB9F25875B2200911902 /* URLImage */; };
 		AD7D02E7257B74DA00B176F7 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D02E6257B74DA00B176F7 /* SignupView.swift */; };
 		AD7D02EB257B775F00B176F7 /* UsernameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D02EA257B775F00B176F7 /* UsernameTextField.swift */; };
 		AD7D02EE257B79EB00B176F7 /* SignupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D02ED257B79EB00B176F7 /* SignupButton.swift */; };
@@ -116,6 +117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD8F567D257BD6C00081001F /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				AD61BBA025875B2200911902 /* URLImage in Frameworks */,
 				AD8F567F257BD6C00081001F /* FirebaseStorageSwift-Beta in Frameworks */,
 				AD8F567B257BD6C00081001F /* FirebaseDatabase in Frameworks */,
 				AD8F5687257BD6C00081001F /* FirebaseInAppMessaging-Beta in Frameworks */,
@@ -342,6 +344,7 @@
 				AD8F5682257BD6C00081001F /* FirebaseFunctions */,
 				AD8F5684257BD6C00081001F /* FirebaseAuth */,
 				AD8F5686257BD6C00081001F /* FirebaseInAppMessaging-Beta */,
+				AD61BB9F25875B2200911902 /* URLImage */,
 			);
 			productName = instagramswiftui;
 			productReference = AD168328257A3E6500913496 /* instagramswiftui.app */;
@@ -372,6 +375,7 @@
 			mainGroup = AD16831F257A3E6500913496;
 			packageReferences = (
 				AD8F5677257BD6C00081001F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				AD61BB9E25875B2100911902 /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = AD168329257A3E6500913496 /* Products */;
 			projectDirPath = "";
@@ -631,6 +635,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AD61BB9E25875B2100911902 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.12;
+			};
+		};
 		AD8F5677257BD6C00081001F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -642,6 +654,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AD61BB9F25875B2200911902 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD61BB9E25875B2100911902 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
 		AD8F5678257BD6C00081001F /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AD8F5677257BD6C00081001F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

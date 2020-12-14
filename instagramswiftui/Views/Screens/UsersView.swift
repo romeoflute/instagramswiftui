@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import URLImage
+
 struct UsersView: View {
     
     @ObservedObject var usersViewModel = UsersViewModel()
@@ -19,16 +21,17 @@ struct UsersView: View {
                     
                     ForEach(usersViewModel.users, id: \.uid) { user in
                         HStack {
-                            Image("photo1").resizable().clipShape(Circle()).frame(width: 50, height: 50)
-                            
+                            URLImage(url: URL(string: user.profileImageUrl)!,
+                                     content: {
+                                        $0
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .clipShape(Circle())
+                                     }).frame(width: 50, height: 50)
                             VStack(alignment: .leading, spacing: 5) {
-                                Text(user.username)
-                                    .font(.headline)
-                                    .bold()
-                                Text("IOS Developer")
-                                    .font(.subheadline)
+                                Text(user.username).font(.headline).bold()
+                                Text("IOS Developer").font(.subheadline)
                             }
-                            
                         }
                         .padding(10)
                     }
