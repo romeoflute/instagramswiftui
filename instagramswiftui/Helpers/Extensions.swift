@@ -9,6 +9,20 @@ import SwiftUI
 import Firebase
 import FirebaseStorage
 
+
+extension String {
+    func splitStringToArray() -> [String] {
+        let trimmedText = String(self.filter { !" \n\t\r".contains($0) })
+        var substringArray: [String] = []
+        for (index, _) in trimmedText.enumerated() {
+            let prefixIndex = index + 1
+            let substringPrefix = String(trimmedText.prefix(prefixIndex)).lowercased()
+            substringArray.append(substringPrefix)
+        }
+        return substringArray
+    }
+}
+
 extension Array {
     func splited(into size:Int) -> [[Element]] {
         
