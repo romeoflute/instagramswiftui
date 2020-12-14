@@ -47,7 +47,7 @@ extension Decodable {
 
 class Ref {
     // Storage
-    static var STORAGE_ROOT = Storage.storage().reference(forURL: "gs://swiftui-instagram.appspot.com")
+    static var STORAGE_ROOT = Storage.storage().reference(forURL: "gs://instagramswiftui-103e5.appspot.com")
     static var STORAGE_AVATAR = STORAGE_ROOT.child("avatar")
     static func STORAGE_AVATAR_USERID(userId: String) -> StorageReference {
         return STORAGE_AVATAR.child(userId)

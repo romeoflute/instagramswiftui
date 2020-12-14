@@ -15,40 +15,46 @@ struct ProfileView: View {
     var body: some View {
         let splitted = photoArray.splited(into: 3)
         return
-             NavigationView {
-                 ScrollView {
+            NavigationView {
+                ScrollView {
                     VStack(alignment: .leading, spacing: 15) {
-                         ProfileHeader()
-                         EditProfileButton()
-                         ProfileInformation()
-                              
-                              Picker(selection: $selection, label: Text("Grid or Table")) {
-                                         ForEach(0..<displayState.count) { index in
-                                             Image(systemName: self.displayState[index]).tag(index)
-                                             
-                                         }
-                              }.pickerStyle(SegmentedPickerStyle()).padding(.leading, 20).padding(.trailing, 20)
-                            VStack(alignment: .leading, spacing: 1) {
-                                // rows
-                                ForEach(0..<splitted.count) { index in
-                                   HStack(spacing: 1) {
-                                        // Columns
-                                        ForEach(splitted[index]) { photo_element in
-                                            Image(photo_element.photo).resizable().scaledToFill().frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.width / 3).clipped()
-                                            
-                                        }
-                                    }
-                                    
-                             }
+                        ProfileHeader()
+                        EditProfileButton()
+                        ProfileInformation()
+                        
+                        Picker(selection: $selection, label: Text("Grid or Table")) {
+                            ForEach(0..<displayState.count) { index in
+                                Image(systemName: self.displayState[index]).tag(index)
+                                
                             }
-                            
-                        }.padding(.top, 20)
-                                      
-                }.navigationBarTitle(Text("Profile"), displayMode: .inline)
-             }
-            
-           
-      
+                        }.pickerStyle(SegmentedPickerStyle()).padding(.leading, 20).padding(.trailing, 20)
+                        VStack(alignment: .leading, spacing: 1) {
+                            // rows
+                            ForEach(0..<splitted.count) { index in
+                                HStack(spacing: 1) {
+                                    // Columns
+                                    ForEach(splitted[index]) { photo_element in
+                                        Image(photo_element.photo).resizable().scaledToFill().frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.width / 3).clipped()
+                                        
+                                    }
+                                }
+                                
+                            }
+                        }
+                        
+                    }.padding(.top, 20)
+                    
+                }
+                .navigationBarTitle(Text("Profile"), displayMode: .inline)
+                .navigationBarItems(leading: Button(action: {}) {
+                    NavigationLink(destination: UsersView()) {
+                        Image(systemName: "person.fill").imageScale(Image.Scale.large).foregroundColor(.black)
+                    }
+                })
+            }
+        
+        
+        
         
     }
 }
