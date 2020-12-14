@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct UserProfileView: View {
+    var userData: User
+    
     var photoArray = [Photo(photo: "photo"), Photo(photo: "photo1"), Photo(photo: "photo2"), Photo(photo: "photo3"), Photo(photo: "photo4"), Photo(photo: "photo5"), Photo(photo: "photo6"), Photo(photo: "photo7"),  Photo(photo: "photo8"), Photo(photo: "photo9")]
     @State var selection = 0
     var displayState = ["square.grid.2x2.fill", "list.dash"]
     var body: some View {
         let splitted = photoArray.splited(into: 3)
         return
-            
                 ScrollView {
                    VStack(alignment: .leading, spacing: 15) {
-                    ProfileHeader()
-                    ProfileInformation()
+                    ProfileHeader(user: userData)
+                    ProfileInformation(user: userData)
                     HStack(spacing: 5) {
                         FollowButton()
                         MessageButton()
@@ -46,7 +47,7 @@ struct UserProfileView: View {
                        
                    }.padding(.top, 20)
                                  
-                }.navigationBarTitle(Text("Lisa "), displayMode: .inline)
+                }.navigationBarTitle(Text(userData.username), displayMode: .inline)
       
         
     }

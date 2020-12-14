@@ -8,6 +8,9 @@
 import SwiftUI
 import URLImage
 
+import SwiftUI
+import URLImage
+
 struct UsersView: View {
     
     @ObservedObject var usersViewModel = UsersViewModel()
@@ -20,20 +23,27 @@ struct UsersView: View {
                 if !usersViewModel.isLoading {
                     
                     ForEach(usersViewModel.users, id: \.uid) { user in
-                        HStack {
-                            URLImage(url: URL(string: user.profileImageUrl)!,
-                                     content: {
-                                        $0
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fill)
-                                            .clipShape(Circle())
-                                     }).frame(width: 50, height: 50)
-                            VStack(alignment: .leading, spacing: 5) {
-                                Text(user.username).font(.headline).bold()
-                                Text("IOS Developer").font(.subheadline)
+                        NavigationLink(destination: UserProfileView(userData: user)) {
+                            HStack {
+                                URLImage(url: URL(string: user.profileImageUrl)!,
+                                         content: {
+                                            $0
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fill)
+                                                .clipShape(Circle())
+                                         })
+                                        .frame(width: 50, height: 50)
+                                VStack(alignment: .leading, spacing: 5) {
+                                    Text(user.username)
+                                        .font(.headline)
+                                        .bold()
+                                    Text("IOS Developer")
+                                        .font(.subheadline)
+                                }
+                                
                             }
+                            .padding(10)
                         }
-                        .padding(10)
                     }
                 }
             }

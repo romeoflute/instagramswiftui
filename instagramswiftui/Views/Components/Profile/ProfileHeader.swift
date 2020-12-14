@@ -6,13 +6,22 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct ProfileHeader: View {
+    var user: User
+    
     var body: some View {
         HStack {
-            Image("photo").resizable().clipShape(Circle()).scaledToFill().frame(width: 80, height: 80).padding(.leading, 20)
+            URLImage(url: URL(string: user.profileImageUrl)!,
+                     content: {
+                        $0
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .clipShape(Circle())
+                     }).frame(width: 80, height: 80).padding(.leading, 20)
             
-                
+            
             Spacer()
             VStack {
                 Text("50").font(.headline)
