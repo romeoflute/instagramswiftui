@@ -26,11 +26,11 @@ let TEXT_SIGNUP_PASSWORD_REQUIRED = "At least 8 characters required."
 
 let IMAGE_LOGO = "logo"
 let IMAGE_USER_PLACEHOLDER = "user-placeholder"
-let IMAGE_PHOTO = "photo"
+let IMAGE_PHOTO = "plus.circle"
 
 class Ref {
     // Storage
-       static var STORAGE_ROOT = Storage.storage().reference(forURL: "gs://swiftui-instagram.appspot.com")
+       static var STORAGE_ROOT = Storage.storage().reference(forURL: "gs://instagramswiftui-103e5.appspot.com")
        
        // Storage - Avatar
        static var STORAGE_AVATAR = STORAGE_ROOT.child("avatar")

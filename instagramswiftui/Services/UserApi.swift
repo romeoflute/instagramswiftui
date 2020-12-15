@@ -27,5 +27,21 @@ class UserApi {
             onSuccess(users)
         }
     }
+    
+    func loadPosts(userId: String, onSuccess: @escaping(_ posts: [Post]) -> Void) {
+        Ref.FIRESTORE_MY_POSTS_DOCUMENT_USERID(userId: userId).collection("userPosts").getDocuments { (snapshot, error) in
+            guard let snap = snapshot else {
+                print("Error fetching data")
+                return
+            }
+            var posts = [Post]()
+            for document in snap.documents {
+                let dict = document.data()
+                guard let decoderPost = try? Post.init(fromDictionary: dict) else {return}
+                posts.append(decoderPost)
+            }
+            onSuccess(posts)
+        }
+    }
 }
 

@@ -24,22 +24,24 @@ extension String {
 }
 
 extension Array {
-    func splited(into size:Int) -> [[Element]] {
-        
-        var splittedArray = [[Element]]()
-        
-        for index in 0...self.count {
-            if index % size == 0 && index != 0 {
-                splittedArray.append(Array(self[(index - size)..<index]))
-            } else if(index == self.count) {
-                splittedArray.append(Array(self[index - 1..<index]))
-            }
-        }
-        
-        return splittedArray
-    }
+       func splited(into size:Int) -> [[Element]] {
+         
+         var splittedArray = [[Element]]()
+         if self.count >= size {
+                 
+             for index in 0...self.count {
+                if index % size == 0 && index != 0 {
+                    splittedArray.append(Array(self[(index - size)..<index]))
+                } else if(index == self.count) {
+                    splittedArray.append(Array(self[index - 1..<index]))
+                }
+             }
+         } else {
+             splittedArray.append(Array(self[0..<self.count]))
+         }
+         return splittedArray
+     }
 }
-
 
 extension Encodable {
     func toDictionary() throws -> [String: Any] {

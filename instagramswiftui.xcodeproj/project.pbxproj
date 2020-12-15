@@ -26,6 +26,11 @@
 		AD61BBBC2587950800911902 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BBBB2587950800911902 /* CameraViewModel.swift */; };
 		AD61BC0B25886DFD00911902 /* PostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BC0A25886DFD00911902 /* PostApi.swift */; };
 		AD61BC0E25886E6900911902 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BC0D25886E6900911902 /* Post.swift */; };
+		AD61BC2925888E2000911902 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BC2825888E2000911902 /* ProfileViewModel.swift */; };
+		AD61BC2C258894F500911902 /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BC2B258894F500911902 /* Selection.swift */; };
+		AD61BC2F2588958500911902 /* GridPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BC2E2588958500911902 /* GridPosts.swift */; };
+		AD61BC32258895B000911902 /* ProfileInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BC31258895B000911902 /* ProfileInformation.swift */; };
+		AD61BC35258895CF00911902 /* EditProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BC34258895CF00911902 /* EditProfileButton.swift */; };
 		AD7D02E7257B74DA00B176F7 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D02E6257B74DA00B176F7 /* SignupView.swift */; };
 		AD7D02EB257B775F00B176F7 /* UsernameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D02EA257B775F00B176F7 /* UsernameTextField.swift */; };
 		AD7D02EE257B79EB00B176F7 /* SignupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D02ED257B79EB00B176F7 /* SignupButton.swift */; };
@@ -86,6 +91,11 @@
 		AD61BBBB2587950800911902 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		AD61BC0A25886DFD00911902 /* PostApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostApi.swift; sourceTree = "<group>"; };
 		AD61BC0D25886E6900911902 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		AD61BC2825888E2000911902 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		AD61BC2B258894F500911902 /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
+		AD61BC2E2588958500911902 /* GridPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridPosts.swift; sourceTree = "<group>"; };
+		AD61BC31258895B000911902 /* ProfileInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInformation.swift; sourceTree = "<group>"; };
+		AD61BC34258895CF00911902 /* EditProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileButton.swift; sourceTree = "<group>"; };
 		AD7D02E6257B74DA00B176F7 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		AD7D02EA257B775F00B176F7 /* UsernameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextField.swift; sourceTree = "<group>"; };
 		AD7D02ED257B79EB00B176F7 /* SignupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupButton.swift; sourceTree = "<group>"; };
@@ -215,6 +225,7 @@
 				AD168351257A747700913496 /* Constants.swift */,
 				AD8F5689257BDB340081001F /* ImagePicker.swift */,
 				AD8F5692257C90B00081001F /* Extensions.swift */,
+				AD61BC2B258894F500911902 /* Selection.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -257,6 +268,7 @@
 				AD61BBBA258794EE00911902 /* Post */,
 				AD61BB7C2587510B00911902 /* Users */,
 				AD90D4FE257F3BA000040F4E /* Auth */,
+				AD61BC2825888E2000911902 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -332,6 +344,9 @@
 			children = (
 				AD90D51D257F920800040F4E /* ProfileHeader.swift */,
 				AD90D5212581FA3100040F4E /* UserProfileView.swift */,
+				AD61BC2E2588958500911902 /* GridPosts.swift */,
+				AD61BC31258895B000911902 /* ProfileInformation.swift */,
+				AD61BC34258895CF00911902 /* EditProfileButton.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -447,10 +462,12 @@
 				AD61BC0E25886E6900911902 /* Post.swift in Sources */,
 				AD7D02EE257B79EB00B176F7 /* SignupButton.swift in Sources */,
 				AD16832C257A3E6500913496 /* instagramswiftuiApp.swift in Sources */,
+				AD61BC32258895B000911902 /* ProfileInformation.swift in Sources */,
 				AD16834B257A711700913496 /* HeaderView.swift in Sources */,
 				AD90D4DD257E5BEF00040F4E /* InitialView.swift in Sources */,
 				AD90D517257F904F00040F4E /* NotificationView.swift in Sources */,
 				AD8F568A257BDB340081001F /* ImagePicker.swift in Sources */,
+				AD61BC35258895CF00911902 /* EditProfileButton.swift in Sources */,
 				AD90D5262581FB2200040F4E /* UsersView.swift in Sources */,
 				AD8F56A3257D10B70081001F /* SigninViewModel.swift in Sources */,
 				AD8F56A0257CBE380081001F /* StorageService.swift in Sources */,
@@ -460,10 +477,13 @@
 				AD90D4EB257F21A500040F4E /* HomeView.swift in Sources */,
 				AD8F569D257CBDEC0081001F /* AuthService.swift in Sources */,
 				AD90D4EE257F326F00040F4E /* Story.swift in Sources */,
+				AD61BC2925888E2000911902 /* ProfileViewModel.swift in Sources */,
+				AD61BC2F2588958500911902 /* GridPosts.swift in Sources */,
 				AD90D507257F477100040F4E /* CommentView.swift in Sources */,
 				AD90D504257F46C600040F4E /* CommentRow.swift in Sources */,
 				AD90D51A257F91B700040F4E /* ProfileView.swift in Sources */,
 				AD61BB812587515700911902 /* Api.swift in Sources */,
+				AD61BC2C258894F500911902 /* Selection.swift in Sources */,
 				AD90D50B257F47A800040F4E /* CommentInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
