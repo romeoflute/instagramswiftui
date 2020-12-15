@@ -23,6 +23,9 @@
 		AD61BB812587515700911902 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BB802587515700911902 /* Api.swift */; };
 		AD61BB842587518800911902 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BB832587518800911902 /* UserApi.swift */; };
 		AD61BBA025875B2200911902 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = AD61BB9F25875B2200911902 /* URLImage */; };
+		AD61BBBC2587950800911902 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BBBB2587950800911902 /* CameraViewModel.swift */; };
+		AD61BC0B25886DFD00911902 /* PostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BC0A25886DFD00911902 /* PostApi.swift */; };
+		AD61BC0E25886E6900911902 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BC0D25886E6900911902 /* Post.swift */; };
 		AD7D02E7257B74DA00B176F7 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D02E6257B74DA00B176F7 /* SignupView.swift */; };
 		AD7D02EB257B775F00B176F7 /* UsernameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D02EA257B775F00B176F7 /* UsernameTextField.swift */; };
 		AD7D02EE257B79EB00B176F7 /* SignupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D02ED257B79EB00B176F7 /* SignupButton.swift */; };
@@ -80,6 +83,9 @@
 		AD61BB7D2587511D00911902 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		AD61BB802587515700911902 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		AD61BB832587518800911902 /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
+		AD61BBBB2587950800911902 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		AD61BC0A25886DFD00911902 /* PostApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostApi.swift; sourceTree = "<group>"; };
+		AD61BC0D25886E6900911902 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		AD7D02E6257B74DA00B176F7 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		AD7D02EA257B775F00B176F7 /* UsernameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextField.swift; sourceTree = "<group>"; };
 		AD7D02ED257B79EB00B176F7 /* SignupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupButton.swift; sourceTree = "<group>"; };
@@ -221,6 +227,14 @@
 			path = Users;
 			sourceTree = "<group>";
 		};
+		AD61BBBA258794EE00911902 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				AD61BBBB2587950800911902 /* CameraViewModel.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
 		AD7D02E5257B74C700B176F7 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +254,7 @@
 		AD8F568C257C8CEB0081001F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				AD61BBBA258794EE00911902 /* Post */,
 				AD61BB7C2587510B00911902 /* Users */,
 				AD90D4FE257F3BA000040F4E /* Auth */,
 			);
@@ -250,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				AD8F568E257C8D0E0081001F /* User.swift */,
+				AD61BC0D25886E6900911902 /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -290,6 +306,7 @@
 				AD8F569F257CBE380081001F /* StorageService.swift */,
 				AD61BB802587515700911902 /* Api.swift */,
 				AD61BB832587518800911902 /* UserApi.swift */,
+				AD61BC0A25886DFD00911902 /* PostApi.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -415,7 +432,9 @@
 				AD16832E257A3E6500913496 /* SigninView.swift in Sources */,
 				AD7D02E7257B74DA00B176F7 /* SignupView.swift in Sources */,
 				AD90D4FB257F3A9600040F4E /* FooterCell.swift in Sources */,
+				AD61BBBC2587950800911902 /* CameraViewModel.swift in Sources */,
 				AD90D513257F8E5900040F4E /* CameraView.swift in Sources */,
+				AD61BC0B25886DFD00911902 /* PostApi.swift in Sources */,
 				AD16834E257A718700913496 /* Modifiers.swift in Sources */,
 				AD90D4E1257E5CDA00040F4E /* SessionStore.swift in Sources */,
 				AD90D51E257F920800040F4E /* ProfileHeader.swift in Sources */,
@@ -425,6 +444,7 @@
 				AD16833E257A701200913496 /* SigninButton.swift in Sources */,
 				AD61BAFB258714A600911902 /* MessagesView.swift in Sources */,
 				AD90D4F8257F3A8400040F4E /* HeaderCell.swift in Sources */,
+				AD61BC0E25886E6900911902 /* Post.swift in Sources */,
 				AD7D02EE257B79EB00B176F7 /* SignupButton.swift in Sources */,
 				AD16832C257A3E6500913496 /* instagramswiftuiApp.swift in Sources */,
 				AD16834B257A711700913496 /* HeaderView.swift in Sources */,
