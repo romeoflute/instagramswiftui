@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct CommentView: View {
-    @ObservedObject var commentInputViewModel = CommentInputViewModel()
+    @ObservedObject var commentViewModel = CommentViewModel()
+
+    var post: Post!
     
-    @State var composedMessage: String = ""
+//    init(post: Post) {
+//        commentViewModel.post = post
+//        commentViewModel.loadComments()
+//    }
     
-    init(post: Post) {
-        commentInputViewModel.post = post
-    }
     var body: some View {
         VStack {
             ScrollView {
@@ -22,8 +24,13 @@ struct CommentView: View {
                 CommentRow().padding(.bottom, 10)
               }
             }
-            CommentInput(post: commentInputViewModel.post)
-        }.padding(.top, 15)
+            CommentInput(post: post)
+        }
+        .padding(.top, 15)
+        .onAppear {
+            self.commentViewModel.post = self.post
+            self.commentViewModel.loadComments()
+        }
     }
 }
 

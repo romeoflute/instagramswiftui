@@ -18,7 +18,7 @@ class CommentInputViewModel: ObservableObject {
         guard let username = Auth.auth().currentUser?.displayName else { return }
         guard let avatarUrl = Auth.auth().currentUser?.photoURL?.absoluteString else { return }
 
-        Api.Comment.sendComment(text: text, username: username, avatar: avatarUrl, ownerId: currentUserId, postId: post.postId, onSuccess: {
+        Api.Comment.sendComment(text: text, username: username, avatarUrl: avatarUrl, ownerId: currentUserId, postId: post.postId, onSuccess: {
             onSuccess()
         }) { (errorMessage) in
             print(errorMessage)
