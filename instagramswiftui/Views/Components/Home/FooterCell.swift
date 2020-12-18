@@ -13,6 +13,7 @@ struct FooterCell: View {
     
     init(post: Post) {
         self.footerCellViewModel.post = post
+        self.footerCellViewModel.checkPostIsLiked()
     }
     
     var body: some View {

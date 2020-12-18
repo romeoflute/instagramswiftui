@@ -14,6 +14,10 @@ class FooterCellViewModel: ObservableObject {
     @Published var post: Post!
     @Published var isLoading = false
     @Published var isLiked = false
+    
+    func checkPostIsLiked(){
+        isLiked = (post.likes["\(Auth.auth().currentUser!.uid)"] == true ) ? true : false
+    }
 
     func like() {
         post.likeCount += 1
