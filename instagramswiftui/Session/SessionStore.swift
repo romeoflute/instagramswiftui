@@ -11,7 +11,7 @@ import FirebaseAuth
 
 class SessionStore: ObservableObject {
     @Published var isLoggedIn: Bool = false
-    @Published var userSession: User?
+    var userSession: User?
     var handle: AuthStateDidChangeListenerHandle?
     
     func listenAuthenticationState() {

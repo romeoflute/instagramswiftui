@@ -28,7 +28,7 @@ class StorageService {
                           onError(error!.localizedDescription)
                           return
                         }
-                        Ref.FIRESTORE_TIMELINE_DOCUMENT_USERID(userId: userId).collection("timeline").document(postId).setData(dict)
+                        Ref.FIRESTORE_TIMELINE_DOCUMENT_USERID(userId: userId).collection("timelinePosts").document(postId).setData(dict)
                         Ref.FIRESTORE_COLLECTION_ALL_POSTS.document(postId).setData(dict)
                         onSuccess()
                     }

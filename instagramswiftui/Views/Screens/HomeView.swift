@@ -8,18 +8,24 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @ObservedObject var homeViewModel = HomeViewModel()
+     
     var body: some View {
         NavigationView {
            ScrollView {
                Story()
-               
-//               ForEach(1..<20) { _ in
-//                   VStack {
-//                         HeaderCell()
-//                         FooterCell()
-//                   }
-//               }
-           }.navigationBarTitle(Text("Instagram"), displayMode: .inline)
+                if !homeViewModel.isLoading {
+                    ForEach(self.homeViewModel.posts, id: \.postId) { post in
+                          VStack {
+                              HeaderCell(post: post)
+                              FooterCell(post: post)
+                          }
+                      }
+                }
+              
+           }
+           .navigationBarTitle(Text("Instagram"), displayMode: .inline)
        }
     }
 }

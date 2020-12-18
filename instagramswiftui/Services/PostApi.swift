@@ -37,4 +37,23 @@ class PostApi {
             onSuccess(posts)
         }
     }
+    
+    func loadTimeline(onSuccess: @escaping(_ posts: [Post]) -> Void) {
+        guard let userId = Auth.auth().currentUser?.uid else {
+                return
+        }
+        Ref.FIRESTORE_TIMELINE_DOCUMENT_USERID(userId: userId).collection("timelinePosts").getDocuments { (snapshot, error) in
+            guard let snap = snapshot else {
+                print("Error fetching data")
+                return
+            }
+            var posts = [Post]()
+            for document in snap.documents {
+                let dict = document.data()
+                guard let decoderPost = try? Post.init(fromDictionary: dict) else {return}
+                posts.append(decoderPost)                
+            }
+            onSuccess(posts)
+        }
+    }
 }
