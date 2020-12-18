@@ -21,4 +21,20 @@ class PostApi {
         StorageService.savePostPhoto(userId: userId, caption: caption, postId: postId, imageData: imageData, metadata: metadata, storagePostRef: storagePostRef, onSuccess: onSuccess, onError: onError)
         
     }
+    
+    func loadPosts(onSuccess: @escaping(_ posts: [Post]) -> Void) {
+        Ref.FIRESTORE_COLLECTION_ALL_POSTS.getDocuments { (snapshot, error) in
+            guard let snap = snapshot else {
+                print("Error fetching data")
+                return
+            }
+            var posts = [Post]()
+            for document in snap.documents {
+                let dict = document.data()
+                guard let decoderPost = try? Post.init(fromDictionary: dict) else {return}
+                posts.append(decoderPost)
+            }
+            onSuccess(posts)
+        }
+    }
 }
