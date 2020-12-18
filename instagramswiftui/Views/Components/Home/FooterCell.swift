@@ -26,7 +26,7 @@ struct FooterCell: View {
                         self.footerCellViewModel.like()
                     }
                 }
-                NavigationLink(destination: CommentView()) {
+                NavigationLink(destination: CommentView(post: self.footerCellViewModel.post)) {
                     Image(systemName: "bubble.left").renderingMode(.original)
                 }
                 
@@ -53,7 +53,7 @@ struct FooterCell: View {
                     .font(.subheadline)
             }
             .padding(.leading, 15)
-            NavigationLink(destination: CommentView()) {
+            NavigationLink(destination: CommentView(post: self.footerCellViewModel.post)) {
                 Text("View all comments")
                     .font(.caption)
                     .foregroundColor(.gray)

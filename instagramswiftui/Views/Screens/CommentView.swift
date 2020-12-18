@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct CommentView: View {
+    @ObservedObject var commentInputViewModel = CommentInputViewModel()
+    
+    @State var composedMessage: String = ""
+    
+    init(post: Post) {
+        commentInputViewModel.post = post
+    }
     var body: some View {
         VStack {
             ScrollView {
@@ -15,13 +22,13 @@ struct CommentView: View {
                 CommentRow().padding(.bottom, 10)
               }
             }
-            CommentInput()
+            CommentInput(post: commentInputViewModel.post)
         }.padding(.top, 15)
     }
 }
 
-struct CommentView_Previews: PreviewProvider {
-    static var previews: some View {
-        CommentView()
-    }
-}
+//struct CommentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CommentView()
+//    }
+//}
