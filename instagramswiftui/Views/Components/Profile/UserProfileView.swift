@@ -8,55 +8,54 @@
 import SwiftUI
 
 struct UserProfileView: View {
-    var userData: User
+    var user: User
+    @ObservedObject var profileViewModel = ProfileViewModel()
+    @State var selection: Selection = .grid
     
-    var photoArray = [Photo(photo: "photo"), Photo(photo: "photo1"), Photo(photo: "photo2"), Photo(photo: "photo3"), Photo(photo: "photo4"), Photo(photo: "photo5"), Photo(photo: "photo6"), Photo(photo: "photo7"),  Photo(photo: "photo8"), Photo(photo: "photo9")]
-    @State var selection = 0
-    var displayState = ["square.grid.2x2.fill", "list.dash"]
     var body: some View {
-        let splitted = photoArray.splited(into: 3)
         return
-                ScrollView {
-                   VStack(alignment: .leading, spacing: 15) {
-                    ProfileHeader(user: userData)
-                    ProfileInformation(user: userData)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 15) {
+                    ProfileHeader(user: user)
+                    ProfileInformation(user: user)
                     HStack(spacing: 5) {
                         FollowButton()
                         MessageButton()
-                    }.padding(.leading, 20).padding(.trailing, 20)
-                         
-                         Picker(selection: $selection, label: Text("Grid or Table")) {
-                                    ForEach(0..<displayState.count) { index in
-                                        Image(systemName: self.displayState[index]).tag(index)
-                                        
-                                    }
-                         }
-                         .pickerStyle(SegmentedPickerStyle())
-                         .padding(.leading, 20)
-                         .padding(.trailing, 20)
+                    }
+                    .padding(.leading, 20)
+                    .padding(.trailing, 20)
                     
-                    
-                       VStack(alignment: .leading, spacing: 1) {
-                           // rows
-                           ForEach(0..<splitted.count) { index in
-                              HStack(spacing: 1) {
-                                   // Columns
-                                   ForEach(splitted[index]) { photo_element in
-                                       Image(photo_element.photo)
-                                        .resizable().scaledToFill()
-                                        .frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.width / 3)
-                                        .clipped()
-                                   }
-                               }
-                               
+                    Picker(selection: $selection, label: Text("Grid or Table")) {
+                        ForEach(Selection.allCases) { selection in
+                            selection.image.tag(selection)
+                            
                         }
-                       }
-                       
-                   }.padding(.top, 20)
-                                 
-                }.navigationBarTitle(Text(userData.username), displayMode: .inline)
-      
-        
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .padding(.leading, 20)
+                    .padding(.trailing, 20)
+                    
+                    if !profileViewModel.isLoading {
+                        if selection == .grid {
+                            GridPosts(splitted: self.profileViewModel.splitted)
+                        } else {
+                            ForEach(self.profileViewModel.posts, id: \.postId) { post in
+                                VStack {
+                                    HeaderCell(post: post)
+                                    FooterCell(post: post)
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+                .padding(.top, 20)
+                
+            }
+            .navigationBarTitle(Text(self.user.username), displayMode: .inline)
+            .onAppear {
+                self.profileViewModel.loadUserPosts(userId: self.user.uid)
+            }
     }
 }
 

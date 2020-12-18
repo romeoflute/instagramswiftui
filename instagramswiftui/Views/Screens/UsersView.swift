@@ -23,7 +23,7 @@ struct UsersView: View {
                 if !usersViewModel.isLoading {
                     
                     ForEach(usersViewModel.users, id: \.uid) { user in
-                        NavigationLink(destination: UserProfileView(userData: user)) {
+                        NavigationLink(destination: UserProfileView(user: user)) {
                             HStack {
                                 URLImage(url: URL(string: user.profileImageUrl)!,
                                          content: {
