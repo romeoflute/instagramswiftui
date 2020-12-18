@@ -13,12 +13,12 @@ struct HomeView: View {
            ScrollView {
                Story()
                
-               ForEach(1..<20) { _ in
-                   VStack {
-                         HeaderCell()
-                         FooterCell()
-                   }
-               }
+//               ForEach(1..<20) { _ in
+//                   VStack {
+//                         HeaderCell()
+//                         FooterCell()
+//                   }
+//               }
            }.navigationBarTitle(Text("Instagram"), displayMode: .inline)
        }
     }

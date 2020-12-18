@@ -22,7 +22,7 @@ struct ProfileView: View {
             NavigationView {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 15) {
-                        ProfileHeader(user: self.session.userSession!)
+                        ProfileHeader(user: self.session.userSession)
                         EditProfileButton()
                         ProfileInformation(user: self.session.userSession)
                         
@@ -32,17 +32,20 @@ struct ProfileView: View {
                             }
                         }
                         .pickerStyle(SegmentedPickerStyle())
-                        .padding(.leading, 20)
-                        .padding(.trailing, 20)
-                        
+                        .padding(.leading, 20).padding(.trailing, 20)
                         if !profileViewModel.isLoading {
                             if selection == .grid {
                                 GridPosts(splitted: self.profileViewModel.splitted)
                             } else {
-                                HeaderCell()
-                                FooterCell()
+                                ForEach(self.profileViewModel.posts, id: \.postId) { post in
+                                    VStack {
+                                        HeaderCell(post: post)
+                                        FooterCell(post: post)
+                                    }
+                                }
                             }
                         }
+                        
                     }
                     .padding(.top, 20)
                     
@@ -55,15 +58,16 @@ struct ProfileView: View {
                 },trailing:
                     Button(action: {
                         self.session.logout()
+                        
                     }) {
                         
-                        Image(systemName: "arrow.right.circle.fill")
-                            .imageScale(Image.Scale.large)
-                            .foregroundColor(.black)
+                        Image(systemName: "arrow.right.circle.fill").imageScale(Image.Scale.large).foregroundColor(.black)
                         
-                    } ).onAppear {
-                        self.profileViewModel.loadUserPosts(userId: Auth.auth().currentUser!.uid)
                     }
+                )
+                .onAppear {
+                    self.profileViewModel.loadUserPosts(userId: Auth.auth().currentUser!.uid)
+                }
             }
     }
 }
