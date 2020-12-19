@@ -31,7 +31,6 @@ struct HomeView: View {
             }
             .onDisappear {
                 self.homeViewModel.listener.remove()
-                self.homeViewModel.posts = []
             }
         }
     }

@@ -22,6 +22,7 @@ class HomeViewModel: ObservableObject {
 //    }
     
     func loadTimeline() {
+        self.posts = []
         isLoading = true
         
         Api.Post.loadTimeline(onSuccess: { (posts) in

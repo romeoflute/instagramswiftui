@@ -16,6 +16,7 @@ class CommentViewModel: ObservableObject {
     var post: Post!
     
     func loadComments() {
+        self.comments = []
         self.isLoading = true
         
         Api.Comment.getComments(postId: post.postId, onSuccess: { (comments) in

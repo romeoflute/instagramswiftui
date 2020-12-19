@@ -35,8 +35,9 @@ struct CommentView: View {
             self.commentViewModel.loadComments()
         }
         .onDisappear {
-            self.commentViewModel.listener.remove()
-            self.commentViewModel.comments = []
+            if self.commentViewModel.listener != nil {
+                self.commentViewModel.listener.remove()
+            }
         }
     }
 }
