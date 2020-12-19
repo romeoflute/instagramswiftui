@@ -79,7 +79,10 @@ struct FooterCell: View {
             }
             .padding(.trailing, 15)
             .padding(.leading, 15)
-            Text("1 day ago").font(.caption).foregroundColor(.gray).padding(.leading, 15)
+            Text(timeAgoSinceDate(Date(timeIntervalSince1970: self.footerCellViewModel.post.date), currentDate: Date(), numericDates: true))
+                .font(.caption)
+                .foregroundColor(.gray)
+                .padding(.leading, 15)
         }
     }
 }
