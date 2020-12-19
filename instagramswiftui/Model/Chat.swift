@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 struct Chat: Encodable, Decodable {
     var messageId: String
@@ -15,4 +16,15 @@ struct Chat: Encodable, Decodable {
     var senderId: String
     var username: String
     var date: Double
+    var type: String
+    
+    var isCurrentUser: Bool {
+        return Auth.auth().currentUser!.uid == senderId
+    }
+    var isPhoto: Bool {
+        return type == "PHOTO"
+    }
+    var isTextMessage: Bool {
+        return type == "TEXT"
+    }
 }

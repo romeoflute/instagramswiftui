@@ -18,7 +18,7 @@ class StorageService {
               }
             storageChatRef.downloadURL { (url, error) in
                 if let metaImageUrl = url?.absoluteString {
-                    let chat = Chat(messageId: messageId, textMessage: "", avatarUrl: senderAvatarUrl, photoUrl: metaImageUrl, senderId: senderId, username: senderUsername, date: Date().timeIntervalSince1970)
+                    let chat = Chat(messageId: messageId, textMessage: "", avatarUrl: senderAvatarUrl, photoUrl: metaImageUrl, senderId: senderId, username: senderUsername, date: Date().timeIntervalSince1970, type: "PHOTO")
                       
                       guard let dict = try? chat.toDictionary() else { return }
                       

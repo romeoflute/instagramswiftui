@@ -20,6 +20,30 @@ class ChatViewModel: ObservableObject {
     var image: Image = Image(systemName: IMAGE_PHOTO)
     @Published var showAlert: Bool = false
     @Published var showImagePicker: Bool = false
+    
+    @Published var chatArray: [Chat] = []
+    @Published var isLoading = false
+    var recipientId = ""
+    var listener: ListenerRegistration!
+    
+    func loadChatMessages() {
+        self.chatArray = []
+        self.isLoading = true
+        
+        Api.Chat.getChatMessages(withUser: recipientId, onSuccess: { (chatMessages) in
+            if self.chatArray.isEmpty {
+                self.chatArray = chatMessages
+            }
+        }, onError: { (errorMessage) in
+            
+        }, newChatMessage: { (chat) in
+            if !self.chatArray.isEmpty {
+                self.chatArray.append(chat)
+            }
+        }) { (listener) in
+            self.listener = listener
+        }
+    }
    
     func sendTextMessage(recipientId: String, recipientAvatarUrl: String, recipientUsername: String, completed: @escaping() -> Void,  onError: @escaping(_ errorMessage: String) -> Void) {
         if !composedMessage.isEmpty {
