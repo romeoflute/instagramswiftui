@@ -26,6 +26,13 @@ struct HomeView: View {
                 
             }
             .navigationBarTitle(Text("Instagram"), displayMode: .inline)
+            .navigationBarItems(trailing:
+                Button(action: {}) {
+                    NavigationLink(destination: MessagesView()) {
+                        Image(systemName: "paperplane.fill").imageScale(Image.Scale.large).foregroundColor(.black)
+                    }
+                }
+            )
             .onAppear {
                 self.homeViewModel.loadTimeline()
             }

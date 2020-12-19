@@ -83,7 +83,9 @@ struct MessageButton: View {
         Button(action: {}) {
             HStack {
                 Spacer()
-                Text("Message").fontWeight(.bold).foregroundColor(Color.black)
+                NavigationLink(destination: ChatView()) {
+                    Text("Message").fontWeight(.bold).foregroundColor(Color.black)
+                }
                 Spacer()
             }.frame(height: 30).background(Color.white)
             
