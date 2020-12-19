@@ -10,7 +10,9 @@ import FirebaseAuth
 
 class UserApi {
     func searchUsers(text: String, onSuccess: @escaping(_ users: [User]) -> Void) {
-        Ref.FIRESTORE_COLLECTION_USERS.whereField("keywords", arrayContains: text.lowercased()).getDocuments { (snapshot, error) in
+        print(text.lowercased().removingWhitespaces())
+        
+        Ref.FIRESTORE_COLLECTION_USERS.whereField("keywords", arrayContains: text.lowercased().removingWhitespaces()).getDocuments { (snapshot, error) in
             guard let snap = snapshot else {
                 print("Error fetching data")
                 return
