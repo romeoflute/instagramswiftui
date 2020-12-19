@@ -44,6 +44,12 @@ class Ref {
         return STORAGE_POSTS.child(postId)
     }
     
+    // Storage - Chat
+    static var STORAGE_CHAT = STORAGE_ROOT.child("chat")
+    static func STORAGE_CHAT_ID(chatId: String) -> StorageReference {
+          return STORAGE_CHAT.child(chatId)
+    }
+    
     // Firestore
     static var FIRESTORE_ROOT = Firestore.firestore()
     

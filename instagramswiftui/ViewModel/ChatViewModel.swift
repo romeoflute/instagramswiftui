@@ -17,7 +17,7 @@ class ChatViewModel: ObservableObject {
     @Published var composedMessage: String = ""
     var imageData: Data = Data()
     var errorString = ""
-    
+    var image: Image = Image(systemName: IMAGE_PHOTO)
     @Published var showAlert: Bool = false
     @Published var showImagePicker: Bool = false
    
@@ -30,7 +30,14 @@ class ChatViewModel: ObservableObject {
           }
     }
     
-    func sendPhotoMessage(recipientId: String, completed: @escaping() -> Void,  onError: @escaping(_ errorMessage: String) -> Void) {
+    func sendPhotoMessage(recipientId: String, recipientAvatarUrl: String, recipientUsername: String, completed: @escaping() -> Void,  onError: @escaping(_ errorMessage: String) -> Void) {
+          if !imageData.isEmpty {
+            Api.Chat.sendPhotoMessages(recipientId: recipientId, recipientAvatarUrl: recipientAvatarUrl, recipientUsername: recipientUsername, imageData: imageData, onSuccess: completed, onError: onError)
+
+          } else {
+              showAlert = true
+              errorString = "Please fill in all fields"
+          }
     }
     
 }

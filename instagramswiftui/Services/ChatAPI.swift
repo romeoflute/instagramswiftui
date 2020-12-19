@@ -41,5 +41,18 @@ class ChatApi {
             }
         }
     }
+    
+    func sendPhotoMessages(recipientId: String, recipientAvatarUrl: String, recipientUsername: String, imageData: Data, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
+        guard let senderId = Auth.auth().currentUser?.uid else { return }
+        guard let senderUsername = Auth.auth().currentUser?.displayName else { return }
+        guard let senderAvatarUrl = Auth.auth().currentUser?.photoURL!.absoluteString else { return }
+        
+        let messageId = Ref.FIRESTORE_COLLECTION_CHATROOM(senderId: senderId, recipientId: recipientId).document().documentID
+        
+        let storageChatRef = Ref.STORAGE_CHAT_ID(chatId: messageId)
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpg"
+        StorageService.saveChatPhoto(messageId: messageId, senderId: senderId, senderUsername: senderUsername, senderAvatarUrl: senderAvatarUrl, recipientId: recipientId, recipientAvatarUrl: recipientAvatarUrl, recipientUsername: recipientUsername, imageData: imageData, metadata: metadata, storageChatRef: storageChatRef, onSuccess: onSuccess, onError: onError)
+    }
 }
 
