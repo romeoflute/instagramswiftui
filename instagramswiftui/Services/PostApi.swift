@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseAuth
 import FirebaseStorage
+import Firebase
 
 class PostApi {
     func uploadPost(caption: String, imageData: Data, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
@@ -38,22 +39,32 @@ class PostApi {
         }
     }
     
-    func loadTimeline(onSuccess: @escaping(_ posts: [Post]) -> Void) {
+    func loadTimeline(onSuccess: @escaping(_ posts: [Post]) -> Void, newPost: @escaping(Post) -> Void, listener: @escaping(_ listenerHandle: ListenerRegistration) -> Void) {
         guard let userId = Auth.auth().currentUser?.uid else {
                 return
         }
-        Ref.FIRESTORE_TIMELINE_DOCUMENT_USERID(userId: userId).collection("timelinePosts").getDocuments { (snapshot, error) in
-            guard let snap = snapshot else {
-                print("Error fetching data")
-                return
+        let listenerFirestore =  Ref.FIRESTORE_TIMELINE_DOCUMENT_USERID(userId: userId).collection("timelinePosts").order(by: "date", descending: true).addSnapshotListener({ (querySnapshot, error) in
+            guard let snapshot = querySnapshot else {
+                   return
             }
             var posts = [Post]()
-            for document in snap.documents {
-                let dict = document.data()
-                guard let decoderPost = try? Post.init(fromDictionary: dict) else {return}
-                posts.append(decoderPost)                
+            snapshot.documentChanges.forEach { (documentChange) in
+                  switch documentChange.type {
+                  case .added:
+                      print("type: added")
+                      let dict = documentChange.document.data()
+                      guard let decoderPost = try? Post.init(fromDictionary: dict) else {return}
+                      newPost(decoderPost)
+                      posts.append(decoderPost)
+                  case .modified:
+                      print("type: modified")
+                  case .removed:
+                      print("type: removed")
+                  }
             }
             onSuccess(posts)
-        }
+        })
+        
+        listener(listenerFirestore)
     }
 }

@@ -10,23 +10,30 @@ import SwiftUI
 struct HomeView: View {
     
     @ObservedObject var homeViewModel = HomeViewModel()
-     
+    
     var body: some View {
         NavigationView {
-           ScrollView {
-               Story()
+            ScrollView {
+                Story()
                 if !homeViewModel.isLoading {
                     ForEach(self.homeViewModel.posts, id: \.postId) { post in
-                          VStack {
-                              HeaderCell(post: post)
-                              FooterCell(post: post)
-                          }
-                      }
+                        VStack {
+                            HeaderCell(post: post)
+                            FooterCell(post: post)
+                        }
+                    }
                 }
-              
-           }
-           .navigationBarTitle(Text("Instagram"), displayMode: .inline)
-       }
+                
+            }
+            .navigationBarTitle(Text("Instagram"), displayMode: .inline)
+            .onAppear {
+                self.homeViewModel.loadTimeline()
+            }
+            .onDisappear {
+                self.homeViewModel.listener.remove()
+                self.homeViewModel.posts = []
+            }
+        }
     }
 }
 
