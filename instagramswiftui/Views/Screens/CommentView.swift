@@ -20,9 +20,12 @@ struct CommentView: View {
     var body: some View {
         VStack {
             ScrollView {
-              ForEach(1..<10) { _ in
-                CommentRow().padding(.bottom, 10)
-              }
+                if !commentViewModel.comments.isEmpty {
+                    ForEach(commentViewModel.comments) { comment in
+                       CommentRow(comment: comment)
+                        .padding(.bottom, 10)
+                   }
+                }
             }
             CommentInput(post: post)
         }

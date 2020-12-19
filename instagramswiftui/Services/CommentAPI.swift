@@ -37,7 +37,9 @@ class CommentApi {
                 comments.append(decoderComment)
                 print("comment data")
                 print(dict)
-            }            
+            }
+            
+            onSuccess(comments)
         }
     }
 }
