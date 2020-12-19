@@ -90,5 +90,40 @@ class ChatApi {
         }
          listener(listenerFirestore)
     }
+    
+    func getInboxMessages(onSuccess: @escaping([InboxMessage]) -> Void, onError: @escaping(_ errorMessage: String) -> Void, newInboxMessage: @escaping(InboxMessage) -> Void, listener: @escaping(_ listenerHandle: ListenerRegistration) -> Void) {
+        let listenerFirestore = Ref.FIRESTORE_COLLECTION_INBOX_MESSAGES(userId: Auth.auth().currentUser!.uid).order(by: "date", descending: true).addSnapshotListener { (querySnapshot, error) in
+            guard let snapshot = querySnapshot else {
+                return
+            }
+            
+            var inboxMessages = [InboxMessage]()
+//            for document in snapshot.documents {
+//                let dict = document.data()
+//                guard let decoderComment = try? Comment.init(fromDictionary: dict) else {return}
+//                comments.append(decoderComment)
+//                print("comment data")
+//                print(decoderComment.comment)
+//            }
+            
+            snapshot.documentChanges.forEach { (documentChange) in
+                switch documentChange.type {
+                case .added:
+                    print("type: added")
+                    let dict = documentChange.document.data()
+                    guard let decoderInboxMessage = try? InboxMessage.init(fromDictionary: dict) else {return}
+                    newInboxMessage(decoderInboxMessage)
+                    inboxMessages.append(decoderInboxMessage)
+                    
+                case .modified:
+                    print("type: modified")
+                case .removed:
+                    print("type: removed")
+                }
+            }
+            onSuccess(inboxMessages)
+        }
+         listener(listenerFirestore)
+    }
 }
 

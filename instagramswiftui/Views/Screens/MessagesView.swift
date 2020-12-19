@@ -6,30 +6,49 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct MessagesView: View {
+    @ObservedObject var messageViewModel = MessageViewModel()
+    
     var body: some View {
         List {
-            ForEach(0..<10) { _ in
-                NavigationLink(destination: ChatView()) {
-                    HStack {
-                        Image("photo1").resizable().clipShape(Circle())
+            if !messageViewModel.inboxMessages.isEmpty {
+                ForEach(messageViewModel.inboxMessages, id: \.id) { inboxMessage in
+                    NavigationLink(destination: ChatView(recipientId: inboxMessage.userId, recipientAvatarUrl: inboxMessage.avatarUrl, recipientUsername: inboxMessage.username)) {
+                        HStack {
+                            URLImage(url: URL(string: inboxMessage.avatarUrl)!, content: {
+                                $0
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .clipShape(Circle())
+                            })
                             .frame(width: 50, height: 50)
-                        VStack(alignment: .leading, spacing: 5) {
-                            Text("David").font(.headline).bold()
-                            Text("Shared a new photoShared a new photoShared a new photoShared a new photo").font(.subheadline).lineLimit(2)
+                            VStack(alignment: .leading, spacing: 5) {
+                                Text(inboxMessage.username)
+                                    .font(.headline).bold()
+                                Text(inboxMessage.lastMessage)
+                                    .font(.subheadline).lineLimit(2)
+                            }
+                            Spacer()
+                            VStack(spacing: 5) {
+                                Text(timeAgoSinceDate(Date(timeIntervalSince1970: inboxMessage.date), currentDate: Date(), numericDates: true))
+                                    .bold()
+                                    .padding(.leading, 15)
+                            }
+                            
                         }
-                        Spacer()
-                        VStack(spacing: 5) {
-                            Text("15:00").bold()
-                            Text("2").padding(8).background(Color.blue).foregroundColor(Color.white).clipShape(Circle())
-                        }
-                        
-                    }.padding(10)
+                        .padding(10)
+                    }
                 }
             }
             
         }.navigationBarTitle(Text("Messages"), displayMode: .inline)
+        .onDisappear {
+            if self.messageViewModel.listener != nil {
+                self.messageViewModel.listener.remove()
+            }
+        }
     }
 }
 
