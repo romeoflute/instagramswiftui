@@ -6,21 +6,30 @@
 //
 
 import Foundation
+import Firebase
 
 class CommentViewModel: ObservableObject {
     
     @Published var comments: [Comment] = []
     @Published var isLoading = false
+    var listener: ListenerRegistration!
     var post: Post!
     
     func loadComments() {
         self.isLoading = true
+        
         Api.Comment.getComments(postId: post.postId, onSuccess: { (comments) in
-            self.comments = comments
+            if self.comments.isEmpty {
+                self.comments = comments
+            }
         }, onError: { (errorMessage) in
             
-        }) { (comment) in
-            
+        }, newComment: { (comment) in
+            if !self.comments.isEmpty {
+                self.comments.append(comment)
+            }
+        }) { (listener) in
+            self.listener = listener
         }
     }
 }
