@@ -8,6 +8,26 @@
 import SwiftUI
 
 struct ChatView: View {
+    @ObservedObject var chatViewModel = ChatViewModel()
+    
+    var recipientId = ""
+    var recipientAvatarUrl = ""
+    var recipientUsername = ""
+    
+    func sendTextMessage() {        
+        chatViewModel.sendTextMessage(recipientId: recipientId, recipientAvatarUrl: recipientAvatarUrl, recipientUsername: recipientUsername, completed: {
+            self.clean()
+        }) { (errorMessage) in
+            self.chatViewModel.showAlert = true
+            self.chatViewModel.errorString = errorMessage
+            self.clean()
+        }
+    }
+    
+    func clean() {
+        self.chatViewModel.composedMessage = ""
+    }
+    
     var body: some View {
         VStack {
             ScrollView {
@@ -29,14 +49,14 @@ struct ChatView: View {
                             Image(systemName: "camera.fill").padding(12).foregroundColor(.white).background(Color.blue).clipShape(Circle())
                         }.padding(.leading, 20)
                         
-                        TextField("Message...", text: .constant("")).padding(.top, 30).padding(.bottom, 30)
+                        TextField("Message...", text: $chatViewModel.composedMessage).padding(.top, 30).padding(.bottom, 30)
                         Button(action: {}) {
                             Image(systemName: "photo").imageScale(.large).foregroundColor(.black)
                         }
                         Button(action: {}) {
                             Image(systemName: "mic.fill").imageScale(.large).foregroundColor(.black)
                         }
-                        Button(action: {}) {
+                        Button(action: sendTextMessage) {
                             Image(systemName: "paperplane").imageScale(.large).foregroundColor(.black).padding(.trailing, 30)
                         }
                     }
@@ -76,7 +96,6 @@ struct ChatRow: View {
                     Image("photo1").scaledToFill().frame(width: 200, height: 200).cornerRadius(10)
                     Spacer()
                 }.padding(.leading, 15)
-                
                 
             } else if isCurrentUser && isPhoto {
                 HStack {

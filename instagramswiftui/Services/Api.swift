@@ -11,5 +11,6 @@ class Api {
     static var User = UserApi()
     static var Post = PostApi()
     static var Comment = CommentApi()
+    static var Chat = ChatApi()
 }
 

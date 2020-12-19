@@ -20,7 +20,7 @@ struct UserProfileView: View {
                     ProfileInformation(user: user)
                     HStack(spacing: 5) {
                         FollowButton()
-                        MessageButton()
+                        MessageButton(user: user)
                     }
                     .padding(.leading, 20)
                     .padding(.trailing, 20)
@@ -79,11 +79,13 @@ struct FollowButton: View {
 }
 
 struct MessageButton: View {
+    var user: User
+    
     var body: some View {
         Button(action: {}) {
             HStack {
                 Spacer()
-                NavigationLink(destination: ChatView()) {
+                NavigationLink(destination: ChatView(recipientId: user.uid, recipientAvatarUrl: user.profileImageUrl, recipientUsername: user.username)) {
                     Text("Message").fontWeight(.bold).foregroundColor(Color.black)
                 }
                 Spacer()
