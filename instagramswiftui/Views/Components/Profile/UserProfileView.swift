@@ -19,7 +19,7 @@ struct UserProfileView: View {
                     ProfileHeader(user: user)
                     ProfileInformation(user: user)
                     HStack(spacing: 5) {
-                        FollowButton()
+                        FollowButton(user:user)
                         MessageButton(user: user)
                     }
                     .padding(.leading, 20)
@@ -66,17 +66,30 @@ struct UserProfileView: View {
 //}
 
 struct FollowButton: View {
+    
+    @ObservedObject var followViewModel = FollowViewModel()
+
+    var user: User
+    
+    func follow() {
+        followViewModel.unfollow(userId: user.uid)
+    }
+    
     var body: some View {
-        Button(action: {}) {
+        Button(action: follow) {
             HStack {
                 Spacer()
-                Text("Follow").fontWeight(.bold).foregroundColor(Color.white)
+                Text("Follow")
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.white)
                 Spacer()
-            }.frame(height: 30).background(Color.blue)
-            
+            }
+            .frame(height: 30)
+            .background(Color.blue)
         }.cornerRadius(5)
     }
 }
+
 
 struct MessageButton: View {
     var user: User
