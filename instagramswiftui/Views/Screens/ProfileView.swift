@@ -13,7 +13,8 @@ struct ProfileView: View {
     
     @EnvironmentObject var session: SessionStore
     @ObservedObject var profileViewModel = ProfileViewModel()
-    
+    @State var followingCountState = 0
+    @State var followersCountState = 0
     @State var selection: Selection = .grid
     
     var body: some View {
@@ -22,7 +23,7 @@ struct ProfileView: View {
             NavigationView {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 15) {
-                        ProfileHeader(user: self.session.userSession)
+                        ProfileHeader(user: self.session.userSession, followingCount: $followingCountState, followersCount: $followersCountState)
                         EditProfileButton()
                         ProfileInformation(user: self.session.userSession)
                         

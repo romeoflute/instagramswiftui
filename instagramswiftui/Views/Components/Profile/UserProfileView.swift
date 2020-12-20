@@ -11,15 +11,18 @@ struct UserProfileView: View {
     var user: User
     @ObservedObject var profileViewModel = ProfileViewModel()
     @State var selection: Selection = .grid
+    @State var followingCountState = 0
+    @State var followersCountState = 0
     
     var body: some View {
         return
             ScrollView {
                 VStack(alignment: .leading, spacing: 15) {
-                    ProfileHeader(user: user)
+                    ProfileHeader(user: user, followingCount: $followingCountState, followersCount: $followersCountState)
                     ProfileInformation(user: user)
                     HStack(spacing: 5) {
-                        FollowButton(user:user)
+                        FollowButton(user: user, followingCount: $followingCountState, followersCount: $followersCountState)
+
                         MessageButton(user: user)
                     }
                     .padding(.leading, 20)
@@ -70,23 +73,50 @@ struct FollowButton: View {
     @ObservedObject var followViewModel = FollowViewModel()
 
     var user: User
+    @Binding var following_Count: Int
+    @Binding var followers_Count: Int
     
+    init(user: User, followingCount: Binding<Int>, followersCount: Binding<Int>) {
+        self.user = user
+        self._following_Count = followingCount
+        self._followers_Count = followersCount
+        updateFollowCount()
+        checkFollowState()
+    }
+    
+    func checkFollowState() {
+        followViewModel.checkFollow(userId: self.user.uid)
+    }
+    
+    func updateFollowCount() {
+        followViewModel.updateFollowCount(userId: user.uid, followingCount_onSuccess: { (following_Count) in
+            self.following_Count = following_Count
+        }) { (followers_Count) in
+            self.followers_Count = followers_Count
+        }
+    }
+
     func follow() {
-        followViewModel.unfollow(userId: user.uid)
+        followViewModel.handleFollow(userId: user.uid, followingCount_onSuccess: { (followingCount) in
+            self.following_Count = followingCount
+        }) { (followersCount) in
+            self.followers_Count = followersCount
+        }
     }
     
     var body: some View {
         Button(action: follow) {
             HStack {
                 Spacer()
-                Text("Follow")
+                Text((followViewModel.isFollowing) ? "UnFollow" : "Follow")
                     .fontWeight(.bold)
                     .foregroundColor(Color.white)
                 Spacer()
             }
             .frame(height: 30)
             .background(Color.blue)
-        }.cornerRadius(5)
+        }
+        .cornerRadius(5)
     }
 }
 

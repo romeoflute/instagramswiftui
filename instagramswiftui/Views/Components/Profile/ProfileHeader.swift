@@ -10,6 +10,8 @@ import URLImage
 
 struct ProfileHeader: View {
     var user: User?
+    @Binding var followingCount: Int
+    @Binding var followersCount: Int
     var body: some View {
         HStack {
             
@@ -29,11 +31,11 @@ struct ProfileHeader: View {
                     Text("Posts").font(.subheadline)
                 }.padding(10)
                 VStack {
-                    Text("100").font(.headline)
+                    Text("\(followersCount)").font(.headline)
                     Text("Followers").font(.subheadline)
                 }.padding(10)
                 VStack {
-                    Text("200").font(.headline)
+                    Text("\(followingCount)").font(.headline)
                     Text("Following").font(.subheadline)
                 }.padding(10)
                 Spacer()
