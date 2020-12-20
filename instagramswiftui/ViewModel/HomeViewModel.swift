@@ -34,6 +34,14 @@ class HomeViewModel: ObservableObject {
             if !self.posts.isEmpty {
                 self.posts.insert(post, at: 0)
             }
+        }, deletePost: { (post) in
+            if !self.posts.isEmpty {
+                for (index, p) in self.posts.enumerated() {
+                    if p.postId == post.postId {
+                        self.posts.remove(at: index)
+                    }
+                }
+            }
         }) { (listener) in
             self.listener = listener
         }

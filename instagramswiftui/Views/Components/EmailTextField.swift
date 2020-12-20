@@ -13,7 +13,7 @@ struct EmailTextField: View {
     var body: some View {
         HStack{
             Image(systemName: "envelope.fill")
-                .foregroundColor(COLOR_LIGHT_GRAY_IMAGE)
+                .foregroundColor(COLOR_LIGHT_GRAY)
             
             TextField(TEXT_EMAIL, text: $email)
         }

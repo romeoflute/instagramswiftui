@@ -34,12 +34,14 @@ class PostApi {
                 let dict = document.data()
                 guard let decoderPost = try? Post.init(fromDictionary: dict) else {return}
                 posts.append(decoderPost)
+                
+                
             }
             onSuccess(posts)
         }
     }
     
-    func loadTimeline(onSuccess: @escaping(_ posts: [Post]) -> Void, newPost: @escaping(Post) -> Void, listener: @escaping(_ listenerHandle: ListenerRegistration) -> Void) {
+    func loadTimeline(onSuccess: @escaping(_ posts: [Post]) -> Void, newPost: @escaping(Post) -> Void, deletePost: @escaping(Post) -> Void, listener: @escaping(_ listenerHandle: ListenerRegistration) -> Void) {
         guard let userId = Auth.auth().currentUser?.uid else {
                 return
         }
@@ -47,24 +49,28 @@ class PostApi {
             guard let snapshot = querySnapshot else {
                    return
             }
-            var posts = [Post]()
+            
             snapshot.documentChanges.forEach { (documentChange) in
                   switch documentChange.type {
                   case .added:
+                      var posts = [Post]()
                       print("type: added")
                       let dict = documentChange.document.data()
                       guard let decoderPost = try? Post.init(fromDictionary: dict) else {return}
                       newPost(decoderPost)
                       posts.append(decoderPost)
+                      onSuccess(posts)
                   case .modified:
                       print("type: modified")
                   case .removed:
                       print("type: removed")
+                      let dict = documentChange.document.data()
+                       guard let decoderPost = try? Post.init(fromDictionary: dict) else {return}
+                       deletePost(decoderPost)
                   }
             }
-            onSuccess(posts)
+            
         })
-        
         listener(listenerFirestore)
     }
 }

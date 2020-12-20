@@ -9,25 +9,11 @@ import Foundation
 
 class FollowViewModel: ObservableObject {
     
-    @Published var isFollowing = false
-    
-    func checkFollow(userId: String) {
-        Ref.FIRESTORE_COLLECTION_FOLLOWERS_USERID(userId: userId).getDocument { (document, error) in
-            if let doc = document, doc.exists {
-                self.isFollowing = true
-            } else {
-                self.isFollowing = false
-            }
-        }
-    }
-    
-    func handleFollow(userId: String, followingCount_onSuccess: @escaping(_ followingCount: Int) -> Void, followersCount_onSuccess: @escaping(_ followersCount: Int) -> Void ) {
+    func handleFollow(userId: String, isFollowing: Bool, followingCount_onSuccess: @escaping(_ followingCount: Int) -> Void, followersCount_onSuccess: @escaping(_ followersCount: Int) -> Void ) {
         if !isFollowing {
             follow(userId: userId, followingCount_onSuccess: followingCount_onSuccess, followersCount_onSuccess: followersCount_onSuccess)
-            isFollowing = true
         } else {
             unfollow(userId: userId, followingCount_onSuccess: followingCount_onSuccess, followersCount_onSuccess: followersCount_onSuccess)
-            isFollowing = false
         }
     }
     

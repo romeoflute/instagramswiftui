@@ -12,7 +12,7 @@ struct UsernameTextField: View {
     var body: some View {
         HStack{
             Image(systemName: "person.fill")
-                .foregroundColor(COLOR_LIGHT_GRAY_IMAGE)
+                .foregroundColor(COLOR_LIGHT_GRAY)
             
             TextField(TEXT_USERNAME, text: $username)
         }

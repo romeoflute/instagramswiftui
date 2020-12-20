@@ -12,7 +12,7 @@ struct PasswordTextField: View {
     var body: some View {
         HStack{
             Image(systemName: "lock.fill")
-                .foregroundColor(COLOR_LIGHT_GRAY_IMAGE)
+                .foregroundColor(COLOR_LIGHT_GRAY)
             
             SecureField(TEXT_PASSWORD, text: $password)
         }

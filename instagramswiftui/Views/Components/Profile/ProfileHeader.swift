@@ -10,12 +10,13 @@ import URLImage
 
 struct ProfileHeader: View {
     var user: User?
+    var postCount: Int
     @Binding var followingCount: Int
     @Binding var followersCount: Int
     var body: some View {
         HStack {
-            
             if user != nil {
+                
                 URLImage(url: URL(string: user!.profileImageUrl)!,
                          content: {
                             $0
@@ -24,10 +25,9 @@ struct ProfileHeader: View {
                                 .clipShape(Circle())
                          }).frame(width: 80, height: 80).padding(.leading, 20)
                 
-                
                 Spacer()
                 VStack {
-                    Text("50").font(.headline)
+                    Text("\(postCount)").font(.headline)
                     Text("Posts").font(.subheadline)
                 }.padding(10)
                 VStack {

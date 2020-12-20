@@ -49,6 +49,7 @@ struct UsersView: View {
             }
         }
         .navigationBarTitle(Text("Search"), displayMode: .inline)
+        
     }
 }
 

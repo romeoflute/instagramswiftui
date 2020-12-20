@@ -23,7 +23,7 @@ struct ProfileView: View {
             NavigationView {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 15) {
-                        ProfileHeader(user: self.session.userSession, followingCount: $followingCountState, followersCount: $followersCountState)
+                        ProfileHeader(user: self.session.userSession, postCount: profileViewModel.posts.count, followingCount: $profileViewModel.followingCountState, followersCount: $profileViewModel.followersCountState)
                         EditProfileButton()
                         ProfileInformation(user: self.session.userSession)
                         
