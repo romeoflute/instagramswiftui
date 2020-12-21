@@ -31,6 +31,7 @@
 		AD3C518F258EC5D60037EA3F /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C518E258EC5D60037EA3F /* MessageViewModel.swift */; };
 		AD3C51AA258EE5CD0037EA3F /* FollowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C51A9258EE5CD0037EA3F /* FollowViewModel.swift */; };
 		AD3C51DD258EF8670037EA3F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C51DC258EF8670037EA3F /* ProfileViewModel.swift */; };
+		AD3C52202590876F0037EA3F /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C521F2590876F0037EA3F /* Activity.swift */; };
 		AD61BAFB258714A600911902 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BAFA258714A600911902 /* MessagesView.swift */; };
 		AD61BAFE2587169800911902 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BAFD2587169800911902 /* ChatView.swift */; };
 		AD61BB7E2587511D00911902 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BB7D2587511D00911902 /* UsersViewModel.swift */; };
@@ -110,6 +111,7 @@
 		AD3C518E258EC5D60037EA3F /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		AD3C51A9258EE5CD0037EA3F /* FollowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewModel.swift; sourceTree = "<group>"; };
 		AD3C51DC258EF8670037EA3F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		AD3C521F2590876F0037EA3F /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		AD61BAFA258714A600911902 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		AD61BAFD2587169800911902 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		AD61BB7D2587511D00911902 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				AD3C509D258CC4760037EA3F /* Comment.swift */,
 				AD3C5157258E39450037EA3F /* Chat.swift */,
 				AD3C515A258E39840037EA3F /* InboxMessage.swift */,
+				AD3C521F2590876F0037EA3F /* Activity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				AD3C51DD258EF8670037EA3F /* ProfileViewModel.swift in Sources */,
 				AD90D4EB257F21A500040F4E /* HomeView.swift in Sources */,
 				AD8F569D257CBDEC0081001F /* AuthService.swift in Sources */,
+				AD3C52202590876F0037EA3F /* Activity.swift in Sources */,
 				AD90D4EE257F326F00040F4E /* Story.swift in Sources */,
 				AD61BC2F2588958500911902 /* GridPosts.swift in Sources */,
 				AD3C5152258E38650037EA3F /* ChatViewModel.swift in Sources */,
