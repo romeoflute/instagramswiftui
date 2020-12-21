@@ -35,3 +35,25 @@ exports.onCreateFollower = functions.firestore
       }
   })
 });
+
+exports.onDeleteFollower = functions.firestore
+.document('/followers/{userId}/userFollowers/{followerId}')
+.onDelete( async (snapshot, context) => {
+
+  console.log("Follower deleted: ", snapshot.id);
+  const userId = context.params.userId;
+  const followerId = context.params.followerId;
+
+  //create deleted user's timeline ref
+  const timelinePostsRef = admin.firestore().collection("timeline").doc(followerId).collection("timelinePosts").where("ownerId", "==", userId);
+
+  //get deleted followed user's myPosts
+  const querySnapshot = await timelinePostsRef.get()
+
+  //remove each user post to following user's timeline
+  querySnapshot.forEach(doc => {
+      if (doc.exists){
+          doc.ref.delete();
+      }
+  })
+});

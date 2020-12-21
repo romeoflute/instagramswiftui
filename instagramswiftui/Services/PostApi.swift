@@ -69,7 +69,6 @@ class PostApi {
                        deletePost(decoderPost)
                   }
             }
-            
         })
         listener(listenerFirestore)
     }
