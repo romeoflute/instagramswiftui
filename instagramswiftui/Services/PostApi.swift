@@ -23,6 +23,20 @@ class PostApi {
         
     }
     
+    func loadPost(postId: String, onSuccess: @escaping(_ post: Post) -> Void) {
+        Ref.FIRESTORE_COLLECTION_ALL_POSTS.document(postId).getDocument { (snapshot, error) in
+            guard let snap = snapshot else {
+                print("Error fetching data")
+                return
+            }
+            
+            let dict = snap.data()
+            guard let decoderPost = try? Post.init(fromDictionary: dict) else {return}
+            
+            onSuccess(decoderPost)
+        }
+    }
+    
     func loadPosts(onSuccess: @escaping(_ posts: [Post]) -> Void) {
         Ref.FIRESTORE_COLLECTION_ALL_POSTS.order(by: "likeCount", descending: true).getDocuments { (snapshot, error) in
             guard let snap = snapshot else {
@@ -43,31 +57,31 @@ class PostApi {
     
     func loadTimeline(onSuccess: @escaping(_ posts: [Post]) -> Void, newPost: @escaping(Post) -> Void, deletePost: @escaping(Post) -> Void, listener: @escaping(_ listenerHandle: ListenerRegistration) -> Void) {
         guard let userId = Auth.auth().currentUser?.uid else {
-                return
+            return
         }
         let listenerFirestore =  Ref.FIRESTORE_TIMELINE_DOCUMENT_USERID(userId: userId).collection("timelinePosts").order(by: "date", descending: true).addSnapshotListener({ (querySnapshot, error) in
             guard let snapshot = querySnapshot else {
-                   return
+                return
             }
             
             snapshot.documentChanges.forEach { (documentChange) in
-                  switch documentChange.type {
-                  case .added:
-                      var posts = [Post]()
-                      print("type: added")
-                      let dict = documentChange.document.data()
-                      guard let decoderPost = try? Post.init(fromDictionary: dict) else {return}
-                      newPost(decoderPost)
-                      posts.append(decoderPost)
-                      onSuccess(posts)
-                  case .modified:
-                      print("type: modified")
-                  case .removed:
-                      print("type: removed")
-                      let dict = documentChange.document.data()
-                       guard let decoderPost = try? Post.init(fromDictionary: dict) else {return}
-                       deletePost(decoderPost)
-                  }
+                switch documentChange.type {
+                case .added:
+                    var posts = [Post]()
+                    print("type: added")
+                    let dict = documentChange.document.data()
+                    guard let decoderPost = try? Post.init(fromDictionary: dict) else {return}
+                    newPost(decoderPost)
+                    posts.append(decoderPost)
+                    onSuccess(posts)
+                case .modified:
+                    print("type: modified")
+                case .removed:
+                    print("type: removed")
+                    let dict = documentChange.document.data()
+                    guard let decoderPost = try? Post.init(fromDictionary: dict) else {return}
+                    deletePost(decoderPost)
+                }
             }
         })
         listener(listenerFirestore)

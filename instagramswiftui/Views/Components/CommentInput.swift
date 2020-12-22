@@ -14,8 +14,18 @@ struct CommentInput: View {
     
     @State var composedMessage: String = ""
     
-    init(post: Post) {
-        commentInputViewModel.post = post
+    init(post: Post?, postId: String?) {
+        if post != nil {
+            commentInputViewModel.post = post
+        } else {
+            handleInputViewModel(postId: postId!)
+        }
+    }
+    
+    func handleInputViewModel(postId: String) {
+        Api.Post.loadPost(postId: postId) { (post) in
+            self.commentInputViewModel.post = post
+        }
     }
     
     func commentAction() {
@@ -28,13 +38,14 @@ struct CommentInput: View {
     
     var body: some View {
         HStack(spacing: 0) {
-            URLImage(url: URL(string: session.userSession!.profileImageUrl)!, content: {
-                $0
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .clipShape(Circle())
-            }).frame(width: 50, height: 50
-            ).padding(.leading, 15)
+            URLImage(url: URL(string: session.userSession!.profileImageUrl)!,
+                     content: {
+                        $0
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .clipShape(Circle())
+                     }).frame(width: 50, height: 50
+                     ).padding(.leading, 15)
             ZStack {
                 RoundedRectangle(cornerRadius: 20).stroke(Color.gray, lineWidth: 1).padding()
                 HStack {
@@ -43,6 +54,7 @@ struct CommentInput: View {
                         Image(systemName: "paperplane").imageScale(.large).foregroundColor(.black).padding(30)
                     }
                 }
+                
             }.frame(height: 70)
         }
     }

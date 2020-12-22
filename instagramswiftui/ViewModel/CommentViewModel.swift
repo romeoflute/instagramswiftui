@@ -13,13 +13,13 @@ class CommentViewModel: ObservableObject {
     @Published var comments: [Comment] = []
     @Published var isLoading = false
     var listener: ListenerRegistration!
-    var post: Post!
+    var postId: String!
     
     func loadComments() {
         self.comments = []
         self.isLoading = true
         
-        Api.Comment.getComments(postId: post.postId, onSuccess: { (comments) in
+        Api.Comment.getComments(postId: postId, onSuccess: { (comments) in
             if self.comments.isEmpty {
                 self.comments = comments
             }
@@ -32,5 +32,7 @@ class CommentViewModel: ObservableObject {
         }) { (listener) in
             self.listener = listener
         }
+        
+ 
     }
 }

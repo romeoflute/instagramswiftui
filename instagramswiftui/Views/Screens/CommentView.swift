@@ -11,6 +11,7 @@ struct CommentView: View {
     @ObservedObject var commentViewModel = CommentViewModel()
 
     var post: Post!
+    var postId: String?
     
 //    init(post: Post) {
 //        commentViewModel.post = post
@@ -22,19 +23,15 @@ struct CommentView: View {
             ScrollView {
                 if !commentViewModel.comments.isEmpty {
                     ForEach(commentViewModel.comments) { comment in
-                       CommentRow(comment: comment)
-                        .padding(.bottom, 10)
+                       CommentRow(comment: comment).padding(.bottom, 10)
                    }
                 }
             }
-            CommentInput(post: post)
-        }
-        .padding(.top, 15)
-        .onAppear {
-            self.commentViewModel.post = self.post
+            CommentInput(post: post, postId: postId)
+        }.padding(.top, 15).onAppear {
+            self.commentViewModel.postId = self.post == nil ? self.postId : self.post?.postId
             self.commentViewModel.loadComments()
-        }
-        .onDisappear {
+        }.onDisappear {
             if self.commentViewModel.listener != nil {
                 self.commentViewModel.listener.remove()
             }

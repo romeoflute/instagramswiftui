@@ -16,7 +16,7 @@ class ActivityApi {
         guard let userId = Auth.auth().currentUser?.uid else {
                 return
         }
-        let listenerFirestore =  Ref.FIRESTORE_COLLECTION_ACTIVITY.document(userId).collection("feedItems").order(by: "date", descending: true).addSnapshotListener({ (querySnapshot, error) in
+        let listenerFirestore =  Ref.FIRESTORE_COLLECTION_ACTIVITY.document(userId).collection("feedItems").order(by: "date", descending: false).addSnapshotListener({ (querySnapshot, error) in
             guard let snapshot = querySnapshot else {
                    return
             }
