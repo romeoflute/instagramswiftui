@@ -32,6 +32,8 @@
 		AD3C51AA258EE5CD0037EA3F /* FollowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C51A9258EE5CD0037EA3F /* FollowViewModel.swift */; };
 		AD3C51DD258EF8670037EA3F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C51DC258EF8670037EA3F /* ProfileViewModel.swift */; };
 		AD3C52202590876F0037EA3F /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C521F2590876F0037EA3F /* Activity.swift */; };
+		AD3C523B2591CD100037EA3F /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C523A2591CD100037EA3F /* ActivityViewModel.swift */; };
+		AD3C523E2591CD450037EA3F /* ActivityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C523D2591CD450037EA3F /* ActivityAPI.swift */; };
 		AD61BAFB258714A600911902 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BAFA258714A600911902 /* MessagesView.swift */; };
 		AD61BAFE2587169800911902 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BAFD2587169800911902 /* ChatView.swift */; };
 		AD61BB7E2587511D00911902 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD61BB7D2587511D00911902 /* UsersViewModel.swift */; };
@@ -112,6 +114,8 @@
 		AD3C51A9258EE5CD0037EA3F /* FollowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewModel.swift; sourceTree = "<group>"; };
 		AD3C51DC258EF8670037EA3F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		AD3C521F2590876F0037EA3F /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		AD3C523A2591CD100037EA3F /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
+		AD3C523D2591CD450037EA3F /* ActivityAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityAPI.swift; sourceTree = "<group>"; };
 		AD61BAFA258714A600911902 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		AD61BAFD2587169800911902 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		AD61BB7D2587511D00911902 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
@@ -305,6 +309,7 @@
 				AD61BB7C2587510B00911902 /* Users */,
 				AD90D4FE257F3BA000040F4E /* Auth */,
 				AD3C5151258E38650037EA3F /* ChatViewModel.swift */,
+				AD3C523A2591CD100037EA3F /* ActivityViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 				AD61BC0A25886DFD00911902 /* PostApi.swift */,
 				AD3C509A258CC4520037EA3F /* CommentAPI.swift */,
 				AD3C5154258E38C20037EA3F /* ChatAPI.swift */,
+				AD3C523D2591CD450037EA3F /* ActivityAPI.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -489,6 +495,7 @@
 				AD168348257A70E400913496 /* EmailTextField.swift in Sources */,
 				AD16832E257A3E6500913496 /* SigninView.swift in Sources */,
 				AD7D02E7257B74DA00B176F7 /* SignupView.swift in Sources */,
+				AD3C523B2591CD100037EA3F /* ActivityViewModel.swift in Sources */,
 				AD90D4FB257F3A9600040F4E /* FooterCell.swift in Sources */,
 				AD61BBBC2587950800911902 /* CameraViewModel.swift in Sources */,
 				AD90D513257F8E5900040F4E /* CameraView.swift in Sources */,
@@ -497,6 +504,7 @@
 				AD90D4E1257E5CDA00040F4E /* SessionStore.swift in Sources */,
 				AD3C5032258C5D7A0037EA3F /* PostPopularViewModel.swift in Sources */,
 				AD90D51E257F920800040F4E /* ProfileHeader.swift in Sources */,
+				AD3C523E2591CD450037EA3F /* ActivityAPI.swift in Sources */,
 				AD3C5155258E38C20037EA3F /* ChatAPI.swift in Sources */,
 				AD8F569A257C92910081001F /* SignupViewModel.swift in Sources */,
 				AD90D50F257F6A0100040F4E /* SearchView.swift in Sources */,
