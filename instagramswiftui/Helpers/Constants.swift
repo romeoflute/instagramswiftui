@@ -20,7 +20,7 @@ let TEXT_USERNAME = "Username"
 let TEXT_PASSWORD = "Password"
 let TEXT_SIGNIN_HEADLINE = "NFT Sharing"
 let TEXT_SIGNIN_SUBHEADLINE = "The easiest way to share photos of NFTs with anyone"
-let TEXT_SIGNUP_NOTE = "An account will allow you to save and access photo information across devices. You can delete your account at any time and your information will not be shared."
+let TEXT_SIGNUP_NOTE = "An account will allow you to save and access your NFT photos across devices. You can delete your account at any time and your information will not be shared."
 let TEXT_SIGNUP_PASSWORD_REQUIRED = "At least 8 characters required"
 
 
